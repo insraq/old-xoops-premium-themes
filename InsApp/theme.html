@@ -1,0 +1,204 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title><{$xoops_sitename}><{if $xoops_pagetitle !=''}> - <{$xoops_pagetitle}><{/if}></title>
+<!-- Meta Tags -->
+<meta name="Description" content="<{$xoops_meta_description}>" />
+<meta http-equiv="content-type" content="text/html; charset=<{$xoops_charset}>" />
+<meta http-equiv="content-language" content="<{$xoops_langcode}>" />
+<meta name="keywords" content="<{$xoops_pagetitle}>,<{$xoops_meta_keywords}>" />
+<meta name="rating" content="<{$xoops_meta_rating}>" />
+<meta name="author" content="<{$xoops_meta_author}>" />
+<meta name="copyright" content="<{$xoops_meta_copyright}>" />
+<meta name="generator" content="<{$smarty.const.META_GENER}>" />
+<meta name="robots" content="<{$xoops_meta_robots}>" />
+<meta name="revisit-after" content="<{$smarty.const.META_REV_AFT}>" />
+<!-- Styles/Relations -->
+<link rel="alternate" type="application/rss+xml" title="RSS" href="<{xoAppUrl backend.php}>" />
+<link rel="stylesheet" type="text/css" media="print"  href="<{xoImgUrl otherCss/print.css}>"/>
+<link rel="alternate stylesheet" type="text/css" media="screen" href="<{xoImgUrl otherCss/highcontrast.css}>" title="zoom" rev="zoom"/>
+<link rel="stylesheet" type="text/css" media="all" href="<{xoImgUrl style.css}>" />
+<!-- JS -->
+<{php}> 
+	global $xoTheme; 
+	$xoTheme->addScript('browse.php?Frameworks/jquery/jquery.js');
+	$xoTheme->addScript('js/jquery.tools.min.js');
+	$xoTheme->addScript('js/jquery.cycle.all.min.js');
+	$xoTheme->addScript('js/hoverIntent.js');
+	$xoTheme->addScript('js/superfish.js');
+	$xoTheme->addScript('js/cufon-yui.js');
+	$xoTheme->addScript('js/Delicious_500.font.js');
+	$header = empty($GLOBALS['xoopsOption']['xoops_module_header']) ? $this->get_template_vars('xoops_module_header') : $GLOBALS['xoopsOption']['xoops_module_header']; 
+	$this->assign('xoops_module_header', $xoTheme->renderMetas(null, true) . $header);
+<{/php}>
+<{$xoops_module_header}>
+<!--[if lt IE 7]>
+<script src="<{xoImgUrl js/unitpngfix.js}>" type="text/javascript"></script>
+<![endif]-->
+<!--[if lt IE 8]>
+<script src="<{xoImgUrl js/IE8.js}>" type="text/javascript"></script>
+<![endif]-->
+<!--[if lte IE 8]>
+<link rel="stylesheet" type="text/css" media="all" href="<{xoImgUrl style-ie.css}>" />
+<![endif]-->
+<script type="text/javascript">
+$(function() {
+	$('.slideshow').cycle({ 
+		fx: 'fade',
+		timeout: 5000,
+		next: '#btn_next', 
+		prev: '#btn_prev' 
+	});
+});
+Cufon.replace('h2, h3, h4', {hover: true});
+</script>
+<!-- Smarty Assign -->
+<{assign var=theme_name value=$xoTheme->folderName}>
+<{assign var=theme_name value=$xoTheme->folderName|cat:'/tpl'}>
+</head>
+<body class="xo-page">
+<!-- Panel -->
+<{includeq file="$theme_name/panel.html"}>
+<!--- Header -->
+<div class="header">
+	<div id="header" class="container_12">
+		<div class="grid_4"><h1 class="logo"><a href="<{xoAppUrl}>"><{$xoops_sitename}></a></h1></div>
+		<div class="grid_8">
+			<div class="nav">
+				<{includeq file="$theme_name/navbar.html"}>
+			</div>
+		</div>
+		<div class="clear"></div>
+		<div class="grid_6">
+		<{includeq file="$theme_name/featured.html"}>
+		</div>
+		<div id="slideshow" class="grid_6">
+			<div class="slideshow">
+			<{includeq file="$theme_name/slideshow.html"}>
+			</div>
+			<a href="#" id="btn_prev">Prev</a>
+			<a href="#" id="btn_next">Next</a>
+		</div>
+		<div class="clear"></div>
+		<div class="grid_6">
+			<ul class="tabs">
+				<{foreach item=block from=$xoBlocks.page_bottomcenter}><li><a href="#"><{$block.title}></a></li><{/foreach}>
+			</ul>
+		</div>
+		<div class="panel-up"><a href="#">Up</a></div>
+		<div class="panel-down"><a href="#">Down</a></div>
+		<script type="text/javascript">
+		$('.panel-up a').click(function () {
+			$('#panel').slideUp('slow', function() {
+				$('.panel-down').show();
+			});
+			$('.panel-up').hide();
+		});
+		$('.panel-down a').click(function () {
+			$('#panel').slideDown('slow', function() {
+				$('.panel-up').show();
+				$('.panel-down').hide();
+			});
+		});
+		</script>
+	</div>
+</div>
+<!-- Content -->
+<div class="container_12">
+	<div class="grid_7">
+		<div class="panes">
+			<{foreach item=block from=$xoBlocks.page_bottomcenter}><div class="center-bottom-center"><{$block.content}></div><{/foreach}>
+		</div>
+		<script type="text/javascript">
+		$(function() {
+			$("ul.tabs").tabs("div.panes > div", {event:'mouseover', effect:'fade'});
+		});
+		</script>
+	<!-- Center Blocks -->
+	<div class="grid_7 alpha omega">
+		<{if $xoBlocks.page_topleft or $xoBlocks.page_topcenter or $xoBlocks.page_topright}>
+			<!-- Center Top Left -->
+			<div class="center-top-left">
+			<{foreach item=block from=$xoBlocks.page_topleft}>
+				<div class="center-top-left-block">
+					<h2><{$block.title}></h2>
+					<{$block.content}>
+				</div>
+			<{/foreach}>
+			</div>
+			<!-- Center Top Right -->
+			<div class="center-top-right">
+			<{foreach item=block from=$xoBlocks.page_topright}>
+				<div class="center-top-right-block">
+					<h2><{$block.title}></h2>
+					<{$block.content}>
+				</div>
+			<{/foreach}>
+			</div>
+			<!-- Center Top Center -->
+			<div class="center-top-center">
+			<{foreach item=block from=$xoBlocks.page_topcenter}>
+				<div class="center-top-center-block">
+					<h2><{$block.title}></h2>
+					<{$block.content}>
+				</div>
+			<{/foreach}>
+			</div>
+		<{/if}>
+		<!-- Content -->
+		<{if $xoops_contents && ($xoops_contents != '') }>
+			<div class="xo-content">
+				<{$xoops_contents}>
+			</div>
+		<{/if}>
+		<{if $xoBlocks.page_bottomleft or $xoBlocks.page_bottomcenter or $xoBlocks.page_bottomright}>
+			<!-- Center Bottom Left -->
+			<div class="center-bottom-left">
+			<{foreach item=block from=$xoBlocks.page_bottomleft}>
+				<div class="center-bottom-left-block">
+					<h2><{$block.title}></h2>
+					<{$block.content}>
+				</div>
+			<{/foreach}>
+			</div>
+			<!-- Center Bottom Right -->
+			<div class="center-bottom-right">
+			<{foreach item=block from=$xoBlocks.page_bottomright}>
+				<div class="center-bottom-block">
+					<h2><{$block.title}></h2>
+					<{$block.content}>
+				</div>
+			<{/foreach}>
+			</div>
+			<div class="clear"></div>
+		<{/if}>
+	</div>
+	</div>
+	<{if $xoBlocks.canvas_right}>
+	<!-- Right Blocks -->
+	<div class="grid_5">
+		<div class="sidebar">
+		<{foreach item=block from=$xoBlocks.canvas_right}>
+			<div class="right-block">
+				<h2 id="right-<{$block.id}>"><{$block.title}><a id="right-toggle-<{$block.id}>" class="right-block-toggle" href="javascript:void(0);"></a></h2>
+				<div class="right-block-content" id="right-block-content-<{$block.id}>"><{$block.content}></div>
+			</div>
+			<script type="text/javascript">
+			$("#right-toggle-<{$block.id}>").click(function () { 
+				$("#right-block-content-<{$block.id}>").slideToggle(function () {
+					$("#right-toggle-<{$block.id}>").toggleClass('plus');
+				});
+			});
+			</script>
+		<{/foreach}>
+		</div>
+	</div>
+	<{/if}>
+	<div class="clear"></div>
+</div>
+<div class="container_12">
+	<div class="footer"><{$xoops_footer}> | A Design of <a href="http://insraq.com">INSRAQ</a></div>
+</div>
+</body>
+</html>

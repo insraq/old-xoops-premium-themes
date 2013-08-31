@@ -1,0 +1,355 @@
+/* 
+ * Name:			Inspire 8 Main Stylesheet
+ * Author:		insraq
+ * URI:			http://insraq.com/
+ * Version:		8.20
+ * License:		CC-BY 3.0
+ * Please do not remove the copyright information
+ */ 
+
+/* Import */
+
+@import url(reset.css);
+@import url(text.css);
+@import url(grid.css);
+/* Choose from "superfish1.css" and "superfish2.css" */
+@import url(superfish1.css);
+/* Global Style */
+
+body.xo-page {
+	color: #666;
+	font-size: 13px;
+	font-family: Georgia, Time, "Times New Roman", serif;
+	line-height: 1.6;
+}
+
+a {
+	color: #FF3333;
+	text-decoration: none;
+}
+
+a img {
+	outline: none;
+	border: 0;
+}
+
+a:hover {
+	color: #FF3333;
+	text-decoration: underline;
+}
+
+h1 {
+	font-size: 20px;
+}
+
+h2 {
+	font-size: 16px;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+h3 {
+	font-size: 15px;
+	font-weight: bold;
+}
+
+h1, h2, h3 {
+	font-family: Arial, Verdana, sans-serif;
+}
+
+small {
+	font-size: 12px;
+}
+
+.clear {
+	clear: both;
+}
+
+/* Header */
+
+#header {
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 10px;
+	width: 960px;
+}
+
+#headerleft {
+	position: absolute;
+	top: 0;
+	left: -20px;
+	background: url(img/header-left.png) no-repeat;
+	width: 20px;
+	height: 116px;
+	z-index: 999;
+}
+
+#headerright {
+	position: absolute;
+	top: 0;
+	left: 960px;
+	background: url(img/header-right.png) no-repeat;
+	width: 20px;
+	height: 116px;
+	background-position: 0 0;
+	z-index: 999;
+}
+
+.slideshow { 
+	width: 960px;
+	height: 500px;
+	overflow: hidden; 
+}
+
+.slideshow p {
+	background: url(img/slide-bg.png) repeat;
+	position: absolute;
+	bottom: 20px;
+	left: 40px;
+	width: 400px;
+	font-size: 16px;
+	font-style: italic;
+	padding: 10px 30px;
+	color: #333;
+}
+
+.slideshow p img {
+	display: block;
+	height: 20px;
+	width: 10px;
+}
+
+#btn_prev, #btn_next {
+	display: block;
+	height: 20px;
+	width: 16px;
+	position: absolute;
+	bottom: 20px;
+	z-index: 999;
+	text-indent: -9999px;
+	overflow: hidden
+}
+
+#btn_prev {
+	left: 10px;
+	background: url(img/left.png);
+}
+
+#btn_next {
+	right: 10px;
+	background: url(img/right.png);
+}
+
+.sitenav {
+	background: url(img/header-bg.png) repeat;
+	position: absolute;
+	top: 20px;
+	left: 0;
+	width: 960px;
+	height: 96px;
+	z-index: 999;
+}
+
+.logo {
+	float: left;
+	margin: 15px 15px 0 15px;
+	width: 155px;
+	height: 40px;
+}
+
+.tagline {
+	font-family: Georgia, Time, "Times New Roman", serif;
+	font-size: 20px;
+	font-style: italic;
+	color: #999;
+	float: left;
+	margin-top: 30px;
+}
+
+.navicon {
+	font-family: Arial, Verdana, sans-serif;
+	font-size: 16px;
+	font-weight: bold;
+	text-transform: uppercase;
+	float: left;
+	padding: 5px 0 0 0;
+}
+
+.navicon a {
+	padding: 0 5px;
+	color: #ccc;
+	text-decoration: none;
+}
+
+.navicon a:hover {
+	color: #fff;
+	text-decoration: none;
+}
+
+.arrow-up {
+	position: absolute;
+	top: -7px;
+	right: 190px;
+	width: 8px;
+	height: 7px;
+}
+
+/* Content */
+
+.sidebar {
+	background: #F0F0F0;
+	padding: 10px;
+	margin: 0 0 20px 0;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+}
+
+.center-block {
+	margin: 10px 0 20px 0;
+}
+
+/* Footer */
+
+.footer {
+	background: #F0F0F0;
+	text-align: right;
+	padding: 10px;
+	margin: 10px 0 0 0;
+	font-size: 12px;
+	color: #999;
+	-webkit-border-top-left-radius: 8px;
+	-webkit-border-top-right-radius: 8px;
+	-webkit-border-bottom-right-radius: 0px;
+	-webkit-border-bottom-left-radius: 0px;
+	-moz-border-radius-topleft: 8px;
+	-moz-border-radius-topright: 8px;
+	-moz-border-radius-bottomright: 0px;
+	-moz-border-radius-bottomleft: 0px;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	border-bottom-right-radius: 0px;
+	border-bottom-left-radius: 0px; 
+}
+
+.footer a {
+	color: #666;
+}
+
+.footer a:hover {
+	color: #333;
+}
+
+/* XOOPS System Template */
+/* The code here is different from Inspire 1-6. I rewrite it based on blanktheme by Kris */
+/* Main Menu */
+#mainmenu {}
+#mainmenu a {
+	display: block;
+}
+#mainmenu a:hover {}
+#mainmenu a:active, #mainmenu a.current {}
+#mainmenu a:visited {}
+#mainmenu a.menuTop  {}
+#mainmenu a.menuMain {}
+#mainmenu a.menuSub {
+	padding: 0 0 0 10px;
+	font-size: 12px;
+}
+#mainmenu a.menuSub:hover  {}
+#mainmenu a.maincurrent {}
+/* User Menu */
+#usermenu {}
+#usermenu a {
+	display: block;
+}
+#usermenu a:hover  {}
+#usermenu a:active, #usermenu a.current {}
+#usermenu a:visited {}
+#usermenu a.menuTop {}
+#usermenu a.highlight {}
+/* Tables and Cells */
+table {
+	width:100%; 
+	margin: .5em 0 1em 0; 
+	border-collapse: collapse;
+}
+caption {}
+th, th.head, thead {
+	font-weight: bold;
+	text-align: center;
+	vertical-align : middle;
+	background: #F0F0F0;; 
+	padding: 5px;
+}
+th.head a {}
+th.head a:hover {}
+.foot, tfoot {}
+tbody {}
+table.outer {
+	border-collapse: separate;
+}
+table td {
+	padding: 5px;
+}
+.outer {	
+	padding: 5px;
+s}
+.head {
+	font-weight: bold;
+	vertical-align: top;
+}
+.even {
+	padding: 5px;
+}
+.odd {
+	padding: 5px;
+}
+tr.even {
+	background: #ffffff;
+}
+tr.odd {
+	background: #ffffff;
+}
+/* Forms */
+button, input[type=submit], input[type=button], input[type=reset], .xo-formbuttons, .formButton {
+}
+/* Pages Navigation */
+#xo-pagenav {}
+.pagneutral {}
+.pagact {}
+.paginact {}
+.xo-counterpage {
+	padding: 5px;
+	margin: 0 2px;
+	border: 1px solid #ccc;
+}
+.xo-pagarrow {
+	padding: 5px;
+	margin: 0 2px;
+	border: 1px solid #ccc;
+}
+
+/* Codes and Quotes */
+
+.xoopsCode {
+	max-height: 400px;
+	overflow: auto;
+	font-family: Consolas, "Courier New", monospace;
+}
+.xoopsQuote {}
+blockquote {
+	font-style: italic;
+	font-family: Georgia, "Times New Roman", serif;
+}
+
+.xoops-msg {
+	text-align: center;
+	margin: 100px 0 0 0;
+	padding: 30px 0;
+	background: #f0f0f0;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+}

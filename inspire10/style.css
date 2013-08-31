@@ -1,0 +1,581 @@
+/* 
+ * Name:		Inspire 10 Main Stylesheet
+ * Author:		insraq
+ * URI:			http://insraq.com/
+ * Version:		10.15
+ * License:		CC-BY 3.0
+ * Please do not remove the copyright information
+ */ 
+
+/* Import */
+
+@import url(reset.css);
+@import url(text.css);
+@import url(960.css);
+ 
+/* Global Style */
+
+body.xo-page {
+	color: #666;
+	font-size: 12px;
+	font-family: Verdana, Arial, sans-serif;
+	line-height: 1.6;
+}
+
+a {
+	color: #539300;
+	text-decoration: none;
+}
+
+a img {
+	outline: none;
+	border: 0;
+}
+
+a:hover {
+	color: #73C900;
+	text-decoration: none;
+}
+
+h1 {
+	font-size: 35px;
+}
+
+h2 {
+	font-size: 18px;
+}
+
+h3 {
+	font-size: 16px;
+}
+
+h4 {
+	font-size: 14px
+}
+
+h1, h2, h3 h4 {
+	font-family: Arial, Verdana, sans-serif;
+	font-weight: normal;
+	margin: 5px 0;
+	padding: 0;
+}
+
+small {
+	font-size: 12px;
+}
+
+/* Theme Specific Style */
+
+/* Panel */
+
+#panel {
+	margin-bottom: 4px;
+	position: relative;
+	display: none;
+}
+
+.panel {
+	background: #B2E571;
+	color: #fff;
+	padding: 15px 0 20px 0;
+}
+
+.panel a {
+	color: #fff;
+}
+
+.panel a:hover {
+	color: #fff;
+}
+
+.xo-usermenu h2 {
+	margin: 5px 0 5px 20px;
+}
+
+.xo-usermenu a {
+	display: block;
+	width: 125px;
+	float: left;
+	padding: 5px 0 5px 20px;
+}
+
+.xo-usermenu a:hover {
+	background: #a6e257;
+}
+
+.xo-loginbox {
+	margin-left: 20px;
+}
+
+.xo-loginbox label {
+	width: 300px;
+	display: block;
+	float: left;
+	margin: 5px 0;
+}
+
+.xo-loginbox span {
+	width: 80px;
+	display: block;
+	float: left;
+	margin: 5px 0 0 0;
+}
+
+.xo-loginbox .text {
+	width: 150px;
+	border: 1px solid #ccc;
+	padding: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.xo-loginbox .submit {
+	margin: 0 0 0 142px;
+	display: block;
+	width: 100px;
+	height: 30px;
+	background: url(img/button-bg.png) repeat-x bottom;
+	border: 1px solid #ccc;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	color: #666;
+	clear: both;
+}
+
+.xo-loginbox .remember {
+	margin: 10px 0;
+	display: block;
+	width: 240px;
+	text-align: right;
+}
+
+.search-input {
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	padding: 5px;
+	width: 150px;
+}
+
+.search-submit {
+	width: 100px;
+	height: 30px;
+	background: url(img/button-bg.png) repeat-x bottom;
+	border: 1px solid #ccc;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	color: #666;
+}
+
+.search-form a {
+	margin: 5px 0;
+	display: block;
+}
+
+.search-form .misc {
+	margin: 20px 0 0 0;
+}
+
+.search-form .misc img {
+	float: left;
+}
+
+.panel-up {
+	width: 37px;
+	height: 22px;
+	position: absolute;
+	bottom: 0;
+	right: 20px;
+	background: url(img/arrow-up.png) no-repeat;
+}
+
+.panel-up a {
+	display: block;
+	width: 37px;
+	height: 22px;
+}
+
+/* Header */
+
+.header {
+	background: #44A2FF;
+	margin: 0;
+	padding: 10px 0 0 0;
+	color: #fff;
+	min-width: 960px;
+	width: 100%;
+}
+
+#header {
+	position: relative;
+}
+
+.header h1 {
+	font-weight: bold;
+	text-transform: uppercase;
+	line-height: 1.0;
+	margin: 0;
+	padding: 0;
+}
+
+.header a {
+	color: #fff;
+}
+
+.header a:hover {
+	color: #fff;
+}
+
+.tagline {
+	margin: 5px 0;
+	padding: 0;
+	color: #B4D9FF;
+	line-height: 1.0
+}
+
+.panel-down {
+	width: 37px;
+	height: 22px;
+	position: absolute;
+	top: -10px;
+	right: 20px;
+	background: url(img/arrow-down.png) no-repeat;
+}
+
+.panel-down a {
+	display: block;
+	width: 37px;
+	height: 22px;
+}
+
+/* Superfish Menu */
+
+.sf-menu, .sf-menu * {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.sf-menu {
+	line-height: 1.0;
+	margin-top: 35px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+}
+.sf-menu ul {
+	position: absolute;
+	top: -999em;
+	width: 12em; /* left offset of submenus need to match (see below) */
+}
+.sf-menu ul li {
+	font-size: 13px;
+	width: 100%;
+}
+.sf-menu li:hover {
+	visibility: inherit; /* fixes IE7 'sticky bug' */
+}
+.sf-menu li {
+	float: left;
+	position: relative;
+}
+.sf-menu a {
+	display: block;
+	position: relative;
+}
+.sf-menu li:hover ul,
+.sf-menu li.sfHover ul {
+	left: 0;
+	top: 2.5em; /* match top ul list item height */
+	z-index: 999;
+}
+ul.sf-menu li:hover li ul,
+ul.sf-menu li.sfHover li ul {
+	top: -999em;
+}
+ul.sf-menu li li:hover ul,
+ul.sf-menu li li.sfHover ul {
+	left: 12em; /* match ul width */
+	top: 0;
+}
+ul.sf-menu li li:hover li ul,
+ul.sf-menu li li.sfHover li ul {
+	top: -999em;
+}
+ul.sf-menu li li li:hover ul,
+ul.sf-menu li li li.sfHover ul {
+	left: 12em; /* match ul width */
+	top: 0;
+}
+.sf-menu {
+	float: left;
+}
+.sf-menu a {
+	padding: .75em 1em;
+	text-decoration:none;
+}
+.sf-menu a, .sf-menu a:visited  { /* visited pseudo selector so IE6 applies text colour*/
+	color: #fff;
+}
+.sf-menu li {
+	background: none;
+}
+.sf-menu li li {
+	background: #44A2FF;
+}
+.sf-menu li li li {
+	background: #44A2FF;
+}
+.sf-menu li:hover, .sf-menu li.sfHover,
+.sf-menu a:focus, .sf-menu a:hover, .sf-menu a:active, .maincurrent {
+	background: #6ab6ff;
+	outline: 0;
+}
+
+/*** arrows **/
+.sf-menu a.sf-with-ul {
+	padding-right: 2.25em;
+	min-width: 1px; /* trigger IE7 hasLayout so spans position accurately */
+}
+.sf-sub-indicator {
+	position: absolute;
+	display: block;
+	right: .75em;
+	top: 1.05em; /* IE6 only */
+	width: 10px;
+	height: 10px;
+	text-indent: -999em;
+	overflow: hidden;
+	background: url('img/arrows-ffffff.png') no-repeat -10px -100px; /* 8-bit indexed alpha png. IE6 gets solid image only */
+}
+a > .sf-sub-indicator {  /* give all except IE6 the correct values */
+	top: .8em;
+	background-position: 0 -100px; /* use translucent arrow for modern browsers*/
+}
+/* apply hovers to modern browsers */
+a:focus > .sf-sub-indicator,
+a:hover > .sf-sub-indicator,
+a:active > .sf-sub-indicator,
+li:hover > a > .sf-sub-indicator,
+li.sfHover > a > .sf-sub-indicator {
+	background-position: -10px -100px; /* arrow hovers for modern browsers*/
+}
+
+/* point right for anchors in subs */
+.sf-menu ul .sf-sub-indicator { background-position: -10px 0; }
+.sf-menu ul a > .sf-sub-indicator { background-position: 0 0; }
+/* apply hovers to modern browsers */
+.sf-menu ul a:focus > .sf-sub-indicator,
+.sf-menu ul a:hover > .sf-sub-indicator,
+.sf-menu ul a:active > .sf-sub-indicator,
+.sf-menu ul li:hover > a > .sf-sub-indicator,
+.sf-menu ul li.sfHover > a > .sf-sub-indicator {
+	background-position: -10px 0; /* arrow hovers for modern browsers*/
+}
+
+/* Showcase */
+
+.showcase {
+	width: 960px;
+	height: 311px;
+	background: url(img/showcase.png) no-repeat;
+	margin: 10px auto;
+	position: relative;
+}
+
+.slides ul, .slides ul li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.slides ul li  {
+	width: 960px;
+	height: 300px;
+	overflow: hidden;
+}
+
+#prevBtn, #nextBtn { 
+	display: block;
+	width: 57px;
+	height: 48px;
+	position: absolute;
+	bottom: 40px;
+	z-index: 999;	
+}
+
+#prevBtn {
+	left: -18px;
+}
+	
+#nextBtn { 
+	right: -18px;
+}
+														
+#prevBtn a, #nextBtn a {  
+	display: block;
+	position: relative;
+	width: 57px;
+	height: 48px;
+	background: url(img/slider-left.png) no-repeat 0 0;
+	text-indent: -99999px;
+	overflow: hidden;
+}	
+	
+#nextBtn a { 
+	background: url(img/slider-right.png) no-repeat 0 0;
+	text-indent: -99999px;
+	overflow: hidden;
+}
+
+/* Extfooter */
+
+.extfooter {
+	width: 100%;
+	min-width: 960px;
+	background: #B2E571;
+	color: #EBF8DA;
+}
+
+.extfooter h2 {
+	color: #fff;
+}
+
+/* Footer */
+
+.footer {
+	text-align: right;
+	padding: 10px 0;
+}
+
+/* TPL system */
+
+.xoops-msg {
+	text-align: center;
+	margin: 100px 0;
+}
+
+/* Blocks */
+
+.left-block {}
+
+.center-top-left {margin: 20px 0;}
+.center-top-center {margin: 20px 0;}
+.center-top-right {margin: 20px 0;}
+
+.center-bottom-left {margin: 20px 0;}
+.center-bottom-center {margin: 20px 0;}
+.center-bottom-right {margin: 20px 0;}
+
+.right-block {}
+
+.xo-cotent {}
+
+/* XOOPS System Template */
+/* The code here is different from Inspire 1-6. I rewrite it based on blanktheme by Kris */
+/* Main Menu */
+#mainmenu {}
+#mainmenu a {
+	display: block;
+}
+#mainmenu a:hover {}
+#mainmenu a:active, #mainmenu a.current {}
+#mainmenu a:visited {}
+#mainmenu a.menuTop  {}
+#mainmenu a.menuMain {}
+#mainmenu a.menuSub {
+	padding: 0 0 0 10px;
+	font-size: 12px;
+}
+#mainmenu a.menuSub:hover  {}
+#mainmenu a.maincurrent {}
+/* User Menu */
+#usermenu {}
+#usermenu a {
+	display: block;
+}
+#usermenu a:hover  {}
+#usermenu a:active, #usermenu a.current {}
+#usermenu a:visited {}
+#usermenu a.menuTop {}
+#usermenu a.highlight {}
+/* Tables and Cells */
+table {
+	width:100%; 
+	margin: .5em 0 1em 0; 
+	border-collapse: collapse;
+}
+caption {}
+th, th.head, thead {
+	font-weight: bold;
+	text-align: center;
+	vertical-align : middle;
+	background: #F0F0F0;
+	padding: 5px;
+}
+th.head a {}
+th.head a:hover {}
+.foot, tfoot {}
+tbody {}
+table.outer {
+	border-collapse: separate;
+}
+table td {
+	padding: 5px;
+}
+.outer {	
+	padding: 5px;
+s}
+.head {
+	font-weight: bold;
+	vertical-align: top;
+}
+.even {
+	padding: 5px;
+}
+.odd {
+	padding: 5px;
+}
+tr.even {
+
+}
+tr.odd {
+
+}
+/* Forms */
+button, input[type=submit], input[type=button], input[type=reset], .xo-formbuttons, .formButton {
+}
+
+input[type=text], input[type=password], input[type=checkbox], input[type=file], textarea {
+	color: #666;
+}
+/* Pages Navigation */
+#xo-pagenav {}
+.pagneutral {}
+.pagact {}
+.paginact {}
+.xo-counterpage {
+	padding: 5px;
+	margin: 0 2px;
+	border: 1px solid #ccc;
+}
+.xo-pagarrow {
+	padding: 5px;
+	margin: 0 2px;
+	border: 1px solid #ccc;
+}
+
+/* Codes and Quotes */
+
+.xoopsCode {
+	max-height: 400px;
+	overflow: auto;
+	font-family: Consolas, "Courier New", monospace;
+}
+.xoopsQuote {}
+blockquote {
+	font-style: italic;
+	font-family: Georgia, "Times New Roman", serif;
+}

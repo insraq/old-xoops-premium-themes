@@ -1,0 +1,391 @@
+/* 
+ *  ___ _   _ ____  ____      _    ___                   
+ * |_ _| \ | / ___||  _ \    / \  / _ \   _ __ ___   ___ 
+ *  | ||  \| \___ \| |_) |  / _ \| | | | | '_ ` _ \ / _ \
+ *  | || |\  |___) |  _ <  / ___ \ |_| |_| | | | | |  __/
+ * |___|_| \_|____/|_| \_\/_/   \_\__\_(_)_| |_| |_|\___|
+ *                                                      
+ * Copyright 2010 SUN Ruoyu (Insraq)
+ *
+ * Name:			Master Stylesheet
+ * Author:		insraq
+ * URI:			http://insraq.com/
+ * Version:		1.2
+ * License:		GPL 3.0
+ * Please do not remove the copyright information
+ *
+ */ 
+
+/* Import */
+
+@import url(reset.css);
+@import url(960.css);
+ 
+/* Global Style */
+
+body {
+	color: #666;
+	font-size: 13px;
+	font-family: Lucida Sans, Lucida Grande, Lucida Sans Unicode, Geneva, Verdana, sans-serif;
+	line-height: 1.6;
+}
+
+a {
+	color: #6699CC;
+	text-decoration: none;
+}
+
+a img {
+	outline: none;
+	border: 0;
+}
+
+a:hover {
+	color: #dc143c;
+	text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: Arial, Verdana, sans-serif;
+	font-weight: normal;
+}
+
+h1 {
+	font-size: 35px;
+}
+
+h2 {
+	font-size: 20px;
+}
+
+h3 {
+	font-size: 18px;
+}
+
+small {
+	font-size: 12px;
+}
+
+/* Theme Specific Style */
+
+/* Header */
+
+.header {
+	background: url(img/header_bg.jpg) repeat-x;
+	width: 100%;
+	padding: 30px 0 0 0;
+	text-shadow: 1px 1px 0px #ffffff;
+}
+
+h1.logo {
+	display: block;
+	width: 238px;
+	height: 46px;
+	background: url(img/logo.png) no-repeat;
+	text-indent: -9999px;
+	overflow: hidden;
+	margin: 10px 0 0 0;
+}
+
+h1.logo a {
+	display: block;
+	width: 238px;
+	height: 46px;
+}
+
+.tagline {
+	color: #999;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-style: italic;
+	margin: 5px 0 0 0;
+}
+
+.header h3 {
+	font-weight: normal;
+	font-family: Lucida Sans, Lucida Grande, Lucida Sans Unicode, Geneva, Verdana, sans-serif;
+}
+
+.header ul a {
+	color: #999;
+	font-size: 11px;
+}
+
+.header ul a:hover {
+	text-decoration: underline;
+}
+
+.header ul li {
+	display: inline;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+/* Slideshow */
+
+.slideshow {
+	margin: 40px auto;
+	width: 960px;
+	height: 300px;
+	overflow: hidden;
+	position: relative;
+}
+
+.slideshow img {
+	width: 960px;
+	height: 300px;
+}
+
+.slideshow h2 {
+	font-family: "Times New Roman", Times, Georgia, serif;
+	font-size: 50px;
+	font-style: italic;
+}
+
+.slideshow-ctrl {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	z-index: 9999;
+	width: 56px;
+	height: 23px;
+	display: none;
+}
+
+#btn_prev, #btn_next {
+	float: left;
+	width: 23px;
+	height: 23px;
+	background-position: 0 0;
+}
+
+#btn_prev {
+	background: url(img/btn_prev.png);
+}
+
+#btn_next {
+	background: url(img/btn_next.png);
+	margin: 0 0 0 10px;
+}
+
+#btn_prev:hover, #btn_next:hover {
+	background-position: -23px 0;
+}
+
+/* Blocks */
+
+.left-block-content {
+	margin-bottom: 20px;
+}
+
+.center-top-left {
+	width: 48%;
+	float: left;
+}
+
+.center-top-left-block {
+	margin-bottom: 20px;
+}
+
+.center-top-right {
+	width: 48%;
+	float: right;
+}
+
+.center-top-right-block {
+	margin-bottom: 20px;
+}
+
+.center-top-center {
+	clear: both;
+	width: 100%;
+}
+
+.center-top-center-block {
+	margin-bottom: 20px;
+}
+
+.center-bottom-left {
+	width: 48%;
+	float: left;
+}
+
+.center-bottom-left-block {
+	margin-bottom: 20px;
+}
+
+.center-bottom-right {
+	width: 48%;
+	float: right;
+}
+
+.center-bottom-right-block {
+	margin-bottom: 20px;
+}
+
+.center-bottom-center {
+	clear: both;
+	width: 100%;
+}
+
+.center-bottom-center-block {
+	margin-bottom: 20px;
+}
+
+.right-block-content {
+	margin-bottom: 20px;
+}
+
+.xo-cotent {
+}
+
+.footer {
+	text-align: center;
+	padding: 10px;
+	border-top: 1px solid #eee;
+	font-size: 11px;
+}
+
+/* XOOPS System Template */
+/* The code here is different from Inspire 1-6. I rewrite it based on blanktheme by Kris */
+/* Main Menu */
+#mainmenu {}
+#mainmenu a {
+	display: block;
+}
+#mainmenu a:hover {}
+#mainmenu a:active, #mainmenu a.current {}
+#mainmenu a:visited {}
+#mainmenu a.menuTop  {}
+#mainmenu a.menuMain {}
+#mainmenu a.menuSub {
+	padding: 0 0 0 10px;
+	font-size: 12px;
+}
+#mainmenu a.menuSub:hover  {}
+#mainmenu a.maincurrent {}
+/* User Menu */
+#usermenu {}
+#usermenu a {
+	display: block;
+}
+#usermenu a:hover  {}
+#usermenu a:active, #usermenu a.current {}
+#usermenu a:visited {}
+#usermenu a.menuTop {}
+#usermenu a.highlight {}
+
+/* Tables and Cells */
+
+table {
+	width:100%; 
+	margin: .5em 0 1em 0; 
+	border-collapse: collapse;
+}
+
+caption {}
+
+th {
+	font-weight: bold;
+	text-align: center;
+	vertical-align : middle;
+	background: #e7eef7;
+	padding: 5px;
+}
+
+th.head a:hover {}
+
+.foot, tfoot {}
+
+tbody {
+
+}
+
+table.outer {
+	border-collapse: separate;
+}
+
+tr {
+	border: 1px solid #eee;
+}
+
+td {
+	padding: 5px;
+}
+
+.outer {	
+	padding: 5px;
+}
+
+.head {
+	font-weight: bold;
+	vertical-align: top;
+}
+
+tr.even {
+	padding: 5px;
+	border-left: 1px solid #eee;
+}
+
+tr.head {
+	border-left: 1px solid #eee;
+}
+
+tr.head td {
+	border-top: 1px solid #eee;
+	border-right: 1px solid #eee;
+}
+
+tr.odd {
+	padding: 5px;
+	border-left: 1px solid #eee;
+	background: #e7eef7;
+}
+tr.even td {
+	border-right: 1px solid #eee;
+	border-top: 1px solid #eee;
+	border-bottom: 1px solid #eee;
+}
+tr.odd td {
+	border-right: 1px solid #eee;
+	border-top: 1px solid #eee;
+	border-bottom: 1px solid #eee;
+}
+
+tr td.head {
+	background: #f8f8f8;
+}
+
+/* Forms */
+button, input[type=submit], input[type=button], input[type=reset], .xo-formbuttons, .formButton {
+}
+input[type=text], input[type=password], input[type=checkbox], input[type=file], textarea {
+}
+/* Pages Navigation */
+#xo-pagenav {}
+.pagneutral {}
+.pagact {}
+.paginact {}
+.xo-counterpage {
+	padding: 5px;
+	margin: 0 2px;
+	border: 1px solid #ccc;
+}
+.xo-pagarrow {
+	padding: 5px;
+	margin: 0 2px;
+	border: 1px solid #ccc;
+}
+
+/* Codes and Quotes */
+
+.xoopsCode {
+	max-height: 400px;
+	overflow: auto;
+	font-family: Consolas, "Courier New", monospace;
+}
+.xoopsQuote {}
+blockquote {
+	font-style: italic;
+	font-family: Georgia, "Times New Roman", serif;
+}

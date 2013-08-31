@@ -1,0 +1,14 @@
+/* 
+ * Name:			Modules Rewrite Stylesheet
+ * Author:		insraq
+ * URI:			http://insraq.com/
+ * Version:		1.2
+ * License:		GPL 3.0
+ * Please do not remove the copyright information
+ */ 
+ 
+/* Newbb */
+
+.ThreadUserName a {
+	color: #6699cc;
+}

@@ -1,0 +1,197 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title><{$xoops_sitename}><{if $xoops_pagetitle !=''}> - <{$xoops_pagetitle}><{/if}></title>
+<!-- Meta Tags -->
+<meta name="Description" content="<{$xoops_meta_description}>" />
+<meta http-equiv="content-type" content="text/html; charset=<{$xoops_charset}>" />
+<meta http-equiv="content-language" content="<{$xoops_langcode}>" />
+<meta name="keywords" content="<{$xoops_pagetitle}>,<{$xoops_meta_keywords}>" />
+<meta name="rating" content="<{$xoops_meta_rating}>" />
+<meta name="author" content="<{$xoops_meta_author}>" />
+<meta name="copyright" content="<{$xoops_meta_copyright}>" />
+<meta name="generator" content="<{$smarty.const.META_GENER}>" />
+<meta name="robots" content="<{$xoops_meta_robots}>" />
+<meta name="revisit-after" content="<{$smarty.const.META_REV_AFT}>" />
+<!-- Styles/Relations -->
+<link rel="alternate" type="application/rss+xml" title="RSS" href="<{xoAppUrl backend.php}>" />
+<!-- Not to load XOOPS.css by default. It may cause some problems -->
+<!-- <link rel="stylesheet" type="text/css" media="screen" href="<{xoAppUrl xoops.css}>" /> -->
+<link rel="stylesheet" type="text/css" media="print"  href="<{xoImgUrl otherCss/print.css}>"/>
+<link rel="alternate stylesheet" type="text/css" media="screen" href="<{xoImgUrl otherCss/highcontrast.css}>" title="zoom" rev="zoom"/>
+<link rel="stylesheet" type="text/css" media="all" href="<{xoImgUrl reset.css}>" />
+<link rel="stylesheet" type="text/css" media="all" href="<{xoImgUrl grid.css}>" />
+<link rel="stylesheet" type="text/css" media="screen" href="<{xoImgUrl style.css}>" title="default" />
+<!-- JS -->
+<!-- Correctly Add JQuery -->
+<{php}> 
+	global $xoTheme; 
+	$xoTheme->addScript('browse.php?Frameworks/jquery/jquery.js');
+	$header = empty($GLOBALS['xoopsOption']['xoops_module_header']) ? $this->get_template_vars('xoops_module_header') : $GLOBALS['xoopsOption']['xoops_module_header'];
+	$this->assign('xoops_module_header', $xoTheme->renderMetas(null, true) . $header);
+<{/php}>
+<{$xoops_module_header}>
+<script src="<{xoImgUrl js/hoverIntent.js}>" type="text/javascript"></script>
+<script src="<{xoImgUrl js/superfish.js}>" type="text/javascript"></script>
+<script src="<{xoImgUrl js/jquery.cycle.all.min.js}>" type="text/javascript"></script>
+<script src="<{xoImgUrl js/jquery.lazyload.mini.js}>" type="text/javascript"></script>
+<!--[if lt IE 7]>
+<script src="<{xoImgUrl js/unitpngfix.js}>" type="text/javascript"></script>
+<![endif]-->
+<!--[if lt IE 8]>
+<script src="<{xoImgUrl js/IE8.js}>" type="text/javascript"></script>
+<![endif]-->
+<!-- Important! - Add specific code from modules -->
+<script type="text/javascript">
+jQuery(function(){
+	jQuery('ul.sf-menu').superfish();
+	$('.slideshow').cycle({ 
+		fx: 'scrollVert', //Can be change to 'fade'
+		timeout: 5000,
+		next: '#btn_next', 
+		prev: '#btn_prev'
+	});
+
+});
+</script>
+</head>
+<!--  Name:		Inspire 8 Layout Premium				-->
+<!-- Author:		Insraq								-->
+<!-- URI:			http://insraq.com/					-->
+<!-- Version:		8.20 Premium						-->
+<!-- License:		GPL 2.0								-->
+<!-- Copyright 2010 Ruoyu SUN (aka. insraq)				-->
+<!-- Please do not remove the copyright information		-->
+<body class="xo-page">
+<div id="header">
+	<div class="slideshow">
+		<!-- Integration of Slideshow, TOP LEFT BLOCK IS USED HERE -->
+		<{if $xoBlocks.page_topleft}>
+			<{foreach item=block from=$xoBlocks.page_topleft}>
+				<div><img src="<{$block.title}>" alt=""><p><{$block.content}></p></div>
+			<{/foreach}>
+		<{/if}>
+	</div>
+	<a href="#" id="btn_prev">Prev</a>
+	<a href="#" id="btn_next">Next</a>
+	<div class="sitenav">
+		<a href="<{xoAppUrl}>"><img class="logo" src="<{xoImgUrl img/logo.png}>" alt="" /></a>
+		<p class="tagline"><{$xoops_slogan}></p>
+		<div class="clear"></div>
+		<ul class="sf-menu">
+			<!-- Integrated main menu, LEFT BLOCK IS USED HERE -->
+			<{foreach item=block from=$xoBlocks.canvas_left}>
+				<{$block.content}>
+			<{/foreach}>
+			<!-- Do not modify the following -->
+			<{if !$xoops_isuser}>
+			<li>
+				<a href="javascript:void(0);">Login</a>
+				<ul id="login">
+					<form method="post" action="<{xoAppUrl user.php op=login}>">
+						Username<br />
+						<input name="uname" type="text" size="15" /><br />
+						Password<br />
+						<input name="pass" type="password" size="15" />
+						<input type="hidden" name="xoops_redirect" value="<{$smarty.server.REQUEST_URI}>" /><br />
+						<input type="checkbox" name="rememberme" value="On" /> Remember<br />
+						<input type="hidden" name="xoops_login" value="1" />
+						<input id="submit-button" type="submit" value="Submit" />
+					</form>
+				</ul>
+			</li>
+			<{else}>
+			<li>
+				<a href="javascript:void(0);">User</a>
+				<ul>
+					<li><{xoInboxCount assign=pmcount}>
+					<li><a href="<{xoAppUrl viewpmsg.php}>" title="Inbox">Inbox<{if $pmcount}><b>(New!)</b><{/if}></a></li>
+					<li><a href="<{xoAppUrl /notifications.php}>" title="Notifications">Notifications</a></li>
+					<li><a href="<{xoAppUrl /user.php}>" title="Profile">Profile</a></li>
+					<li><a href="<{xoAppUrl /edituser.php}>" title="Edit Profile">Edit Profile</a></li>
+					<li><{if $xoops_isadmin}><a href="<{xoAppUrl /admin.php}>" title="Admin">Admin</a><{/if}></li>
+					<li><a href="<{xoAppUrl /user.php op=logout}>" title="Log out" >Logout</a></li>
+				</ul>
+			</li>
+			<{/if}>
+			<li>
+				<a href="javascript:void(0);">Search</a>
+				<ul id="search">
+					<form action="<{xoAppUrl search.php}>" method="get">
+					<input class="search-input" type="text" name="query" />
+					<input class="search-submit" type="submit" value="Search" />
+					<input type="hidden" name="action" value="results" />
+					</form>
+				</ul>
+			</li>
+			<div class="clear"></div>
+		</ul>
+	</div>
+	<div id="headerleft"></div>
+	<div id="headerright"></div>
+</div>
+<div id="xo-content" class="row">
+	<{if $xoBlocks.canvas_right}><div class="column grid_8"><{else}><div class="column grid_12"><{/if}>
+		<{if $xoBlocks.page_topcenter or $xoBlocks.page_topright}>
+			<{foreach item=block from=$xoBlocks.page_topcenter}>
+				<div class="center-block">
+					<h2><{$block.title}></h2>
+					<{$block.content}>
+				</div>
+			<{/foreach}>
+			<{foreach item=block from=$xoBlocks.page_topright}>
+				<div class="center-block">
+					<h2><{$block.title}></h2>
+					<{$block.content}>
+				</div>
+			<{/foreach}>
+		<{/if}>
+		<{if $xoops_contents && ($xoops_contents != '') }>
+			<div class="center-block">
+				<{$xoops_contents}>
+			</div>
+		<{/if}>
+		<{if $xoBlocks.page_bottomleft or $xoBlocks.page_bottomcenter or $xoBlocks.page_bottomright}>
+			<{foreach item=block from=$xoBlocks.page_bottomleft}>
+				<div class="center-block">
+					<h2><{$block.title}></h2>
+					<{$block.content}>
+				</div>
+			<{/foreach}>
+			<{foreach item=block from=$xoBlocks.page_bottomcenter}>
+				<div class="center-block">
+					<h2><{$block.title}></h2>
+					<{$block.content}>
+				</div>
+			<{/foreach}>
+			<{foreach item=block from=$xoBlocks.page_bottomright}>
+				<div class="center-block">
+					<h2><{$block.title}></h2>
+					<{$block.content}>
+				</div>
+			<{/foreach}>
+		<{/if}>
+	</div>
+	<div class="column grid_4">
+		<{if $xoBlocks.canvas_right}>
+			<{foreach item=block from=$xoBlocks.canvas_right}>
+				<div class="sidebar">
+					<h2><{$block.title}></h2>
+					<{$block.content}>
+				</div>
+			<{/foreach}>
+		<{/if}>
+	</div>
+</div>
+<script type="text/javascript">
+jQuery(function(){
+	$("#xo-content img").lazyload({ 
+		placeholder : "<{xoImgUrl img/grey.gif}>",
+		effect : "fadeIn"
+	});
+});
+</script>
+<div class="row"><div class="footer">Proudly Powered by <a href="http://xoops.org/">XOOPS</a> | Inspire 8 is a Design of <a href="http://insraq.com">INSRAQ</a></div></div>
+</body>
+</html>

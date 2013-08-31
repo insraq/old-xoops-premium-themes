@@ -1,0 +1,328 @@
+/* 
+ * Name:		InsLight
+ * Author:		Insraq
+ * URI:			http://insraq.com/
+ * Version:		1.0
+ * License:		Rf to License.txt
+ * Please do not remove the copyright information
+ */ 
+
+/* Import */
+
+@import url(reset.css);
+@import url(text.css);
+@import url(960.css);
+@import url(panel.css);
+ 
+/* Global Style */
+
+body {
+	color: #666;
+	font-size: 13px;
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	line-height: 1.6;
+}
+
+a {
+	color: #E56900;
+	text-decoration: none;
+}
+
+a img {
+	outline: none;
+	border: 0;
+}
+
+a:hover {
+	color: #662870;
+	text-decoration: none;
+}
+
+h1, h2, h3 {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	margin: 10px 0;
+	font-weight: normal;
+	color: #101F29;
+}
+
+h1 {
+	font-size: 35px;
+}
+
+h2 {
+	font-size: 20px;
+}
+
+h3 {
+	font-size: 16px;
+}
+
+small {
+	font-size: 12px;
+}
+
+/* Theme Specific Style */
+
+/* Header */
+
+#header {
+	position: relative;
+}
+
+#panel-ctrl {
+	height: 48px;
+	width: 48px;
+	display: block;
+	position: absolute;
+	right: 0;
+	top: 25px;
+	z-index: 9999;
+}
+
+.plus {
+	background: url(img/Plus.png);
+}
+
+.close {
+	background: url(img/X.png);
+}
+
+#panel-ctrl a {
+	height: 48px;
+	width: 48px;
+	display: block;
+}
+
+.header {
+	background: url(img/header_bg.png) repeat-x;
+	display: block;
+	height: 312px;
+	width: 100%;
+	min-width: 960px;
+}
+
+.header h1 {
+	background: url(img/logo.png) no-repeat;
+	width: 300px;
+	height: 99px;
+	text-indent: -9999px;
+	overflow: hidden;
+	margin: 0;
+}
+
+.header h1 a {
+	width: 300px;
+	height: 99px;
+	display: block;
+}
+
+/* Slideshow */
+
+.slideshow {
+	background: url(img/slideshow_bg.png) no-repeat;
+	width: 960px;
+	height: 350px;
+	margin: -220px auto 0 auto;
+	padding: 10px;
+	position: relative;
+}
+
+#slider {
+	width: 960px;
+	height: 350px;
+	position: absolute;
+	top: 10px;
+	left: 10px;
+}
+
+.slider-ctrl {
+	background: url(img/slider_ctrl.png) no-repeat;
+	width: 116px;
+	height: 52px;
+	display: block;
+	position: absolute;
+	right: 20px;
+	bottom: 20px;
+	z-index: 9999;
+	display: none;
+}
+
+#btn_prev, #btn_next {
+	display: block;
+	float: left;
+	width: 58px;
+	height: 52px;
+	text-indent: -9999px;
+	overflow: hidden;
+}
+
+.footer {
+	text-align: center;
+	padding: 10px;
+	color: #fff;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-style: italic;
+	font-size: 12px;
+	background: #BCD400;
+}
+
+.footer a {
+	color: #fff;
+	border-bottom: 1px solid;
+}
+
+/* Blocks */
+
+.left-block {
+	margin-bottom: 20px;
+}
+
+.center-top-left {
+	width: 48%;
+	float: left;
+	margin-bottom: 20px;
+}
+
+.center-top-right {
+	width: 48%;
+	float: right;
+	margin-bottom: 20px;
+}
+
+.center-top-center {
+	clear: both;
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+.center-bottom-left {
+	width: 48%;
+	float: left;
+	margin-bottom: 20px;
+}
+
+.center-bottom-right {
+	width: 48%;
+	float: right;
+	margin-bottom: 20px;
+}
+
+.center-bottom-center {
+	clear: both;
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+.right-block {
+	margin-bottom: 20px;
+}
+
+.xoops-msg {
+	margin: 100px 0;
+	text-align: center;
+}
+
+/* XOOPS System Template */
+/* The code here is different from Inspire 1-6. I rewrite it based on blanktheme by Kris */
+/* Main Menu */
+#mainmenu {}
+#mainmenu a {
+	display: block;
+}
+#mainmenu a:hover {}
+#mainmenu a:active, #mainmenu a.current {}
+#mainmenu a:visited {}
+#mainmenu a.menuTop  {}
+#mainmenu a.menuMain {}
+#mainmenu a.menuSub {
+	padding: 0 0 0 10px;
+	font-size: 12px;
+}
+#mainmenu a.menuSub:hover  {}
+#mainmenu a.maincurrent {}
+/* User Menu */
+#usermenu {}
+#usermenu a {
+	display: block;
+}
+#usermenu a:hover  {}
+#usermenu a:active, #usermenu a.current {}
+#usermenu a:visited {}
+#usermenu a.menuTop {}
+#usermenu a.highlight {}
+/* Tables and Cells */
+table {
+	width:100%; 
+	margin: .5em 0 1em 0; 
+	border-collapse: collapse;
+}
+caption {}
+th, th.head, thead {
+	font-weight: bold;
+	text-align: center;
+	vertical-align : middle;
+	background: #F0F0F0;
+	padding: 5px;
+}
+th.head a {}
+th.head a:hover {}
+.foot, tfoot {}
+tbody {}
+table.outer {
+	border-collapse: separate;
+}
+table td {
+	padding: 5px;
+}
+.outer {	
+	padding: 5px;
+s}
+.head {
+	font-weight: bold;
+	vertical-align: top;
+}
+.even {
+	padding: 5px;
+}
+.odd {
+	padding: 5px;
+}
+tr.even {
+
+}
+tr.odd {
+
+}
+/* Forms */
+button, input[type=submit], input[type=button], input[type=reset], .xo-formbuttons, .formButton {
+}
+input[type=text], input[type=password], input[type=checkbox], input[type=file], textarea {
+}
+/* Pages Navigation */
+#xo-pagenav {}
+.pagneutral {}
+.pagact {}
+.paginact {}
+.xo-counterpage {
+	padding: 5px;
+	margin: 0 2px;
+	border: 1px solid #ccc;
+}
+.xo-pagarrow {
+	padding: 5px;
+	margin: 0 2px;
+	border: 1px solid #ccc;
+}
+
+/* Codes and Quotes */
+
+.xoopsCode {
+	max-height: 400px;
+	overflow: auto;
+	font-family: Consolas, "Courier New", monospace;
+}
+.xoopsQuote {}
+blockquote {
+	font-style: italic;
+	font-family: Georgia, "Times New Roman", serif;
+}

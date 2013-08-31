@@ -1,0 +1,302 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title><{$xoops_sitename}><{if $xoops_pagetitle !=''}> - <{$xoops_pagetitle}><{/if}></title>
+<!-- Meta Tags -->
+<meta name="Description" content="<{$xoops_meta_description}>" />
+<meta http-equiv="content-type" content="text/html; charset=<{$xoops_charset}>" />
+<meta http-equiv="content-language" content="<{$xoops_langcode}>" />
+<meta name="keywords" content="<{$xoops_pagetitle}>,<{$xoops_meta_keywords}>" />
+<meta name="rating" content="<{$xoops_meta_rating}>" />
+<meta name="author" content="<{$xoops_meta_author}>" />
+<meta name="copyright" content="<{$xoops_meta_copyright}>" />
+<meta name="generator" content="<{$smarty.const.META_GENER}>" />
+<meta name="robots" content="<{$xoops_meta_robots}>" />
+<meta name="revisit-after" content="<{$smarty.const.META_REV_AFT}>" />
+<!-- Styles/Relations -->
+<link rel="alternate" type="application/rss+xml" title="RSS" href="<{xoAppUrl backend.php}>" />
+<!--
+<link rel="stylesheet" type="text/css" media="screen" href="<{xoAppUrl xoops.css}>" />
+-->
+<link rel="stylesheet" type="text/css" media="print"  href="<{xoImgUrl otherCss/print.css}>"/>
+<link rel="alternate stylesheet" type="text/css" media="screen" href="<{xoImgUrl otherCss/highcontrast.css}>" title="zoom" rev="zoom"/>
+<link rel="stylesheet" type="text/css" media="all" href="<{xoImgUrl style.css}>" />
+<!--[if lt IE 8]>
+<link rel="stylesheet" type="text/css" media="all" href="<{xoImgUrl style-ie7.css}>" />
+<![endif]-->
+<!-- JS -->
+<{php}> 
+	global $xoTheme; 
+	$xoTheme->addScript('browse.php?Frameworks/jquery/jquery.js');
+	$header = empty($GLOBALS['xoopsOption']['xoops_module_header']) ? $this->get_template_vars('xoops_module_header') : $GLOBALS['xoopsOption']['xoops_module_header'];
+	$this->assign('xoops_module_header', $xoTheme->renderMetas(null, true) . $header);
+<{/php}>
+<{$xoops_module_header}>
+<script type="text/javascript" src="<{xoImgUrl js/cufon-yui.js}>"></script>
+<script type="text/javascript" src="<{xoImgUrl js/Cantarell_500-Cantarell_700-Cantarell_oblique_500-Cantarell_oblique_700.font.js}>"></script>
+<script type="text/javascript">
+	Cufon.replace('h1', {hover: true});
+	Cufon.replace('h2', {hover: true});
+	Cufon.replace('h3', {hover: true});
+	Cufon.replace('h4', {hover: true});
+	Cufon.replace('.tagline', {hover: true});
+	Cufon.replace('.footer', {hover: true});
+</script>
+<script src="<{xoImgUrl js/hoverIntent.js}>" type="text/javascript"></script>
+<script src="<{xoImgUrl js/superfish.js}>" type="text/javascript"></script>
+<script src="<{xoImgUrl js/jquery.lazyload.mini.js}>" type="text/javascript"></script>
+<script src="<{xoImgUrl js/easySlider1.7.js}>" type="text/javascript"></script>
+<script type="text/javascript">
+$(function(){
+	jQuery('ul.sf-menu').superfish();
+});
+</script>
+<!--[if lt IE 7]>
+<script src="<{xoImgUrl js/unitpngfix.js}>" type="text/javascript"></script>
+<![endif]-->
+<!--[if lt IE 8]>
+<script src="<{xoImgUrl js/IE8.js}>" type="text/javascript"></script>
+<![endif]-->
+</head>
+<body class="xo-page">
+<!-- Panel -->
+<div id="panel" class="container_12">
+	<div class="panel">
+		<div class="grid_4">
+			<h2>Welcome to <{$xoops_sitename}></h2>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget tellus purus. Vivamus iaculis imperdiet ligula. Quisque ac orci elit, nec pulvinar leo. Nulla velit ante, ullamcorper id scelerisque nec, laoreet eu sem. Cras non volutpat quam. Nam dui mi, consectetur et sollicitudin accumsan, cursus fermentum justo. 
+		</div>
+		<div class="grid_4">
+			<{if !$xoops_isuser}>
+			<div class="xo-loginbox">
+				<h2>Sign In</h2>
+				<form method="post" action="<{xoAppUrl user.php op=login}>">
+					<label>
+						<span>Username</span>
+						<input class="text" name="uname" type="text" size="15" />
+					</label>
+					<label>
+						<span>Password</span>
+						<input class="text" name="pass" type="password" size="15" />
+					</label>
+					<input type="hidden" name="xoops_redirect" value="<{$smarty.server.REQUEST_URI}>" />
+					<span class="remember"><input type="checkbox" name="rememberme" value="On" /> Remember </span>
+					<input type="hidden" name="xoops_login" value="1" />
+					<input class="submit" type="submit" value="Submit" />
+				</form>
+			</div>
+			<{else}>
+			<div class="xo-usermenu">
+				<h2>User Menu</h2>
+				<{xoInboxCount assign=pmcount}>
+				<a href="<{xoAppUrl viewpmsg.php}>" title="Inbox">Inbox<{if $pmcount}><b>(New!)</b><{/if}></a>
+				<a href="<{xoAppUrl /notifications.php}>" title="Notifications">Notifications</a>
+				<a href="<{xoAppUrl /user.php}>" title="Profile">Profile</a>
+				<a href="<{xoAppUrl /edituser.php}>" title="Edit Profile">Edit Profile</a>
+				<{if $xoops_isadmin}><a href="<{xoAppUrl /admin.php}>" title="Admin">Admin</a><{/if}>
+				<a href="<{xoAppUrl /user.php op=logout}>" title="Log out" >Logout</a>
+			</div>
+			<{/if}>
+		</div>
+		<div class="grid_4">
+			<div class="search-form">
+				<h2>Search</h2>
+				<form action="<{xoAppUrl search.php}>" method="get">
+					<input class="search-input" type="text" name="query" />
+					<input class="search-submit" type="submit" value="Search" />
+					<input type="hidden" name="action" value="results" />
+					<a href="<{xoAppUrl /search.php}>">Advanced Search</a>
+				</form>
+				<div class="misc">
+					<h2>Social Networks</h2>
+					<!-- Twitter -->
+					<a href="#"><img src="<{xoImgUrl img/twitter.png}>" /></a>
+					<!-- Facebook -->
+					<a href="#"><img src="<{xoImgUrl img/facebook.png}>" /></a>
+					<!-- Flickr -->
+					<a href="#"><img src="<{xoImgUrl img/flickr.png}>" /></a>
+					<!-- Last.fm -->
+					<a href="#"><img src="<{xoImgUrl img/lastfm.png}>" /></a>
+					<!-- LinkedIn -->
+					<a href="#"><img src="<{xoImgUrl img/linkedin.png}>" /></a>
+					<span class="clear"></span>
+				</div>
+			</div>
+		</div>
+		<div class="panel-up"><a href="javascript:void(0);"></a></div>
+		<div class="clear"></div>
+	</div>
+</div>
+<!--- Header -->
+<div class="header">
+	<div id="header" class="container_12">
+		<div class="grid_4">
+			<h1><a href="<{xoAppUrl}>"><{$xoops_sitename}></a></h1>
+			<p class="tagline"><{$xoops_slogan}></p>
+		</div>
+		<div class="grid_8">
+		<{if $xoBlocks.canvas_left}>
+			<ul class="sf-menu">
+			<{foreach item=block from=$xoBlocks.canvas_left}>
+				<{$block.content}>
+			<{/foreach}>
+			</ul>
+		<{/if}>
+		</div>
+		<div class="clear"></div>
+		<div class="panel-down"><a href="javascript:void(0);"></a></div>
+	</div>
+</div>
+<script type="text/javascript">
+$(function() {
+	$(".panel-up a").click(function () {
+		$("#panel").slideUp("slow");
+		$(".panel-down").fadeIn("slow");
+		$(".panel-up").fadeOut("slow");
+	});	
+	$(".panel-down a").click(function () {
+		$("#panel").slideDown("slow");
+		$(".panel-up").fadeIn("slow");
+		$(".panel-down").fadeOut("slow");
+	});
+	//easyslider
+	$(".slides").easySlider({
+		auto: true, 
+		continuous: true
+	});
+});
+</script>
+<!--[if lt IE 8]>
+<script type="text/javascript">
+//IE 7 Fix for z-index bug
+$(function() {
+	var zIndexNumber = 1000;
+	$('div').each(function() {
+		$(this).css('zIndex', zIndexNumber);
+		zIndexNumber -= 10;
+	});
+});
+</script>
+<![endif]-->
+<!-- Showcase -->
+<{if $xoBlocks.canvas_right}>
+<div class="showcase">
+	<div class="slides">
+		<ul>				
+			<{foreach item=block from=$xoBlocks.canvas_right}><li><a href="<{$block.content}>"><img src="<{$block.title}>" alt="" /></a></li><{/foreach}>
+		</ul>
+	</div>
+</div>
+<{/if}>
+<!-- Content -->
+<div id="maincontent" class="container_12">
+	<{if $xoBlocks.page_topleft}>
+	<!-- Left Blocks -->
+	<div class="grid_3">
+		<{foreach item=block from=$xoBlocks.page_topleft}>
+			<div class="center-top-left">
+				<h2><{$block.title}></h2>
+				<{$block.content}>
+			</div>
+		<{/foreach}>
+	</div>
+	<{/if}>
+	<!-- Center Blocks -->
+	<{if $xoBlocks.page_topleft and $xoBlocks.page_topright}>
+	<div class="grid_6">
+	<{else}><{if $xoBlocks.page_topleft or $xoBlocks.page_topright}>
+	<div class="grid_9">
+	<{else}>
+	<div class="grid_12">
+	<{/if}><{/if}>
+		<{if $xoBlocks.page_topcenter}>
+			<{foreach item=block from=$xoBlocks.page_topcenter}>
+				<div class="center-top-center">
+					<h2><{$block.title}></h2>
+					<{$block.content}>
+				</div>
+			<{/foreach}>
+		<{/if}>
+		<{if $xoops_contents && ($xoops_contents != '') }>
+			<div class="xo-maincontent">
+				<{$xoops_contents}>
+			</div>
+		<{/if}>
+	</div>
+	<{if $xoBlocks.page_topright}>
+	<!-- Right Blocks -->
+	<div class="grid_3">
+		<{foreach item=block from=$xoBlocks.page_topright}>
+			<div class="center-top-right">
+				<h2><{$block.title}></h2>
+				<{$block.content}>
+			</div>
+		<{/foreach}>
+	</div>
+	<{/if}>
+	<div class="clear"></div>
+</div>
+<!-- Extfooter -->
+<div class="extfooter">
+<div class="container_12">
+	<{if $xoBlocks.page_bottomleft}>
+	<!-- Left Blocks -->
+	<div class="grid_4">
+		<{foreach item=block from=$xoBlocks.page_bottomleft}>
+			<div class="center-top-left">
+				<h2><{$block.title}></h2>
+				<{$block.content}>
+			</div>
+		<{/foreach}>
+	</div>
+	<{/if}>
+	<!-- Center Blocks -->
+	<{if $xoBlocks.page_bottomleft and $xoBlocks.page_bottomright}>
+	<div class="grid_4">
+	<{else}><{if $xoBlocks.page_bottomleft or $xoBlocks.page_bottomright}>
+	<div class="grid_8">
+	<{else}>
+	<div class="grid_12">
+	<{/if}><{/if}>
+		<{if $xoBlocks.page_bottomcenter}>
+			<{foreach item=block from=$xoBlocks.page_bottomcenter}>
+				<div class="center-top-center">
+					<h2><{$block.title}></h2>
+					<{$block.content}>
+				</div>
+			<{/foreach}>
+		<{/if}>
+	</div>
+	<{if $xoBlocks.page_topright}>
+	<!-- Right Blocks -->
+	<div class="grid_4">
+		<{foreach item=block from=$xoBlocks.page_bottomright}>
+			<div class="center-top-right">
+				<h2><{$block.title}></h2>
+				<{$block.content}>
+			</div>
+		<{/foreach}>
+	</div>
+	<{/if}>
+	<div class="clear"></div>
+</div>
+</div>
+<div class="container_12">
+	<div class="grid_12">
+		<div class="footer"><{$xoops_footer}> | Inspire 10 - A Design of <a href="http://insraq.com">INSRAQ</a></div>
+	</div>
+</div>
+<script type="text/javascript">
+jQuery(function(){
+	$("#maincontent img").lazyload({ 
+		placeholder : "<{xoImgUrl img/grey.gif}>",
+		effect : "fadeIn"
+	});
+});
+</script>
+<!--[if IE]>
+<script type="text/javascript"> Cufon.now(); </script>
+<![endif]-->
+</body>
+</html>

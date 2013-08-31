@@ -1,0 +1,50 @@
+<{if $xoops_menu_navbar}>
+	<{$xoops_menu_navbar}>
+<{else}>
+	<style>
+	/* Nav */
+	.nav {
+		height: 99px;
+		font-size: 16px;
+		font-family: Arial, Helvetica, sans-serif;
+		text-transform: capitalize;
+		font-weight: bold;
+	}
+	
+	#navbar {
+		margin: 30px 0 0 0;
+		padding: 0;
+	}
+	
+	#navbar li {
+		display: block;
+		float: left;
+		list-style: none;
+		margin: 0 5px;
+	}
+
+	#navbar li a {
+		color: #fff;
+		display: block;
+		padding: 8px 10px;
+	}
+
+	#navbar li a:hover {
+		-webkit-border-radius: 8px;
+		-moz-border-radius: 8px;
+		border-radius: 8px;
+		background: #fffffe;
+		color: #E56900;
+	}
+	</style>
+	<ul id="navbar">
+		<li><a href="<{xoAppUrl}>">Home</a></li>
+		<li><a href="#">About</a></li>
+		<li><a href="#">News</a></li>
+		<li><a href="#">Forum</a></li>
+		<li><a href="#">Blogs</a></li>
+		<li><a href="#">Wiki</a></li>
+		<li><a href="#">Contact</a></li>
+		<span class="clear"></span>
+	</ul>
+<{/if}>

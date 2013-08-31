@@ -1,0 +1,251 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title><{$xoops_sitename}><{if $xoops_pagetitle !=''}> - <{$xoops_pagetitle}><{/if}></title>
+<!-- Meta Tags -->
+<meta name="Description" content="<{$xoops_meta_description}>" />
+<meta http-equiv="content-type" content="text/html; charset=<{$xoops_charset}>" />
+<meta http-equiv="content-language" content="<{$xoops_langcode}>" />
+<meta name="keywords" content="<{$xoops_pagetitle}>,<{$xoops_meta_keywords}>" />
+<meta name="rating" content="<{$xoops_meta_rating}>" />
+<meta name="author" content="<{$xoops_meta_author}>" />
+<meta name="copyright" content="<{$xoops_meta_copyright}>" />
+<meta name="generator" content="<{$smarty.const.META_GENER}>" />
+<meta name="robots" content="<{$xoops_meta_robots}>" />
+<meta name="revisit-after" content="<{$smarty.const.META_REV_AFT}>" />
+<!-- Styles/Relations -->
+<link rel="alternate" type="application/rss+xml" title="RSS" href="<{xoAppUrl backend.php}>" />
+<!--
+<link rel="stylesheet" type="text/css" media="screen" href="<{xoAppUrl xoops.css}>" />
+-->
+<link rel="stylesheet" type="text/css" media="print"  href="<{xoImgUrl otherCss/print.css}>"/>
+<link rel="alternate stylesheet" type="text/css" media="screen" href="<{xoImgUrl otherCss/highcontrast.css}>" title="zoom" rev="zoom"/>
+<link rel="stylesheet" type="text/css" media="all" href="<{xoImgUrl style.css}>" />
+<!-- JS -->
+<{php}> 
+	global $xoTheme; 
+	$xoTheme->addScript('browse.php?Frameworks/jquery/jquery.js');
+	$header = empty($GLOBALS['xoopsOption']['xoops_module_header']) ? $this->get_template_vars('xoops_module_header') : $GLOBALS['xoopsOption']['xoops_module_header'];
+	$this->assign('xoops_module_header', $xoTheme->renderMetas(null, true) . $header);
+<{/php}>
+<{$xoops_module_header}>
+<script src="<{xoImgUrl js/jquery.tools.min.js}>" type="text/javascript"></script>
+<script src="<{xoImgUrl js/hoverIntent.js}>" type="text/javascript"></script>
+<script src="<{xoImgUrl js/superfish.js}>" type="text/javascript"></script>
+<script src="<{xoImgUrl js/jquery.lazyload.mini.js}>" type="text/javascript"></script>
+<!--[if lt IE 7]>
+<script src="<{xoImgUrl js/unitpngfix.js}>" type="text/javascript"></script>
+<![endif]-->
+<!--[if lt IE 8]>
+<script src="<{xoImgUrl js/IE8.js}>" type="text/javascript"></script>
+<![endif]-->
+<script type="text/javascript">
+jQuery(function(){
+	jQuery('ul.sf-menu').superfish({
+		animation: {height:'show'},
+		delay: 800
+	});
+});
+</script>
+</head>
+<body class="xo-page">
+<!--  Name:		Inspire 9 Layout Premium				-->
+<!-- Author:		Insraq								-->
+<!-- URI:			http://insraq.com/					-->
+<!-- Version:		9 Premium						-->
+<!-- License:		GPL 2.0								-->
+<!-- Copyright 2010 Ruoyu SUN (aka. insraq)				-->
+<!-- Please do not remove the copyright information		-->
+<!-- Panel -->
+<div class="container_12" id="searchpanel">
+	<a id="searchpanel-shut" href="#">Shut</a>
+	<form action="<{xoAppUrl search.php}>" method="get">
+		<a href="<{xoAppUrl /search.php}>">Advanced Search</a>
+		<input class="search-input" type="text" name="query" />
+		<input class="search-submit" type="submit" value="Search" />
+		<input type="hidden" name="action" value="results" />
+	</form>
+	<div class="clear"></div>
+</div>
+<div class="container_12" id="userpanel">
+	<a id="userpanel-shut" href="#">Shut</a>
+	<{if !$xoops_isuser}>
+		<form method="post" action="<{xoAppUrl user.php op=login}>">
+			<label>Username</label>
+			<input name="uname" type="text" size="15" />
+			<label>Password</label>
+			<input name="pass" type="password" size="15" />
+			<input type="hidden" name="xoops_redirect" value="<{$smarty.server.REQUEST_URI}>" />
+			<input type="checkbox" name="rememberme" value="On" /> Remember
+			<input type="hidden" name="xoops_login" value="1" />
+			<input class="submit-button" type="submit" value="Submit" />
+		</form>
+	<{else}>
+	<div class="panelmenu">
+		<{xoInboxCount assign=pmcount}>
+		<a href="<{xoAppUrl viewpmsg.php}>" title="Inbox">Inbox<{if $pmcount}><b>(New!)</b><{/if}></a>
+		<a href="<{xoAppUrl /notifications.php}>" title="Notifications">Notifications</a>
+		<a href="<{xoAppUrl /user.php}>" title="Profile">Profile</a>
+		<a href="<{xoAppUrl /edituser.php}>" title="Edit Profile">Edit Profile</a>
+		<{if $xoops_isadmin}><a href="<{xoAppUrl /admin.php}>" title="Admin">Admin</a><{/if}>
+		<a href="<{xoAppUrl /user.php op=logout}>" title="Log out" >Logout</a>
+	</div>
+	<{/if}>
+	<div class="clear"></div>
+</div>
+<!--- Header -->
+<div class="container_12" id="header">
+    <div class="grid_4" id="logo"><a href="<{xoAppUrl}>"><img src="<{xoImgUrl img/logo.png}>" alt="" /></a></div>
+	<div class="grid_8" id="banner">
+        <!-- Banner is not on by default --> 
+        <!-- <{$xoops_banner}> -->
+    </div>
+	<div class="clear"></div>
+</div>
+<!-- Navbar -->
+<div class="container_12" id="navbar">
+	<div class="grid_10">
+		<ul class="sf-menu">
+			<!-- Integrated main menu, LEFT BLOCK IS USED HERE -->
+			<{foreach item=block from=$xoBlocks.canvas_left}>
+				<{$block.content}>
+			<{/foreach}>
+		</ul>
+	</div>
+	<div class="grid_2">
+		<ul class="navicon">
+			<li><a href="javascript:void(0);" id="userpanel-trigger"><img src="<{xoImgUrl img/user.png}>" alt="" /></a></li>
+			<li><a href="javascript:void(0);" id="searchpanel-trigger"><img src="<{xoImgUrl img/search.png}>" alt="" /></a></li>
+			<li><a href="<{xoAppUrl backend.php}>"><img src="<{xoImgUrl img/rss.png}>" alt="" /></a></li>
+			<li class="clear"></li>
+		</ul>
+	</div>
+	<div class="clear"></div>
+	<script>
+	jQuery(function($) {
+		$("#searchpanel-trigger").click(function () {
+			$("#userpanel").slideUp("slow");
+			$("#searchpanel").slideToggle("slow");
+		});
+		$("#searchpanel-shut").click(function () {
+			$("#searchpanel").slideUp("slow");
+		});
+		$("#userpanel-trigger").click(function () {
+			$("#searchpanel").slideUp("slow");
+			$("#userpanel").slideToggle("slow");
+		});
+		$("#userpanel-shut").click(function () {
+			$("#userpanel").slideUp("slow");
+		});
+	});
+	</script>
+</div>
+<!-- Slideshow -->
+<div class="container_12" id="spotlight">
+    <{if $xoBlocks.canvas_right}>
+	<div class="slideshow">
+		<{foreach item=block from=$xoBlocks.canvas_right}>
+		<div>
+			<span class="grid_6"><{$block.content}></span>
+			<span class="grid_6"><img class="slide-img" src="<{$block.title}>" alt=""></span>   
+			<span class="clear"></span>
+		</div>
+		<{/foreach}>
+	</div>
+	<div class="slidetabs">
+		<{foreach item=block from=$xoBlocks.canvas_right}><a href="#"></a><{/foreach}>
+	</div>
+	<div class="left-arrow"><a class="backward">prev</a></div>
+	<div class="right-arrow"><a class="forward">next</a></div>
+	<script>
+	jQuery(function($) {
+		$(".slidetabs").tabs(".slideshow > div", {
+			effect: 'fade',
+			fadeOutSpeed: 500,
+			fadeInSpeed: 500,
+			rotate: true
+		}).slideshow({
+			autoplay: true,
+			clickable: false,
+			interval: 5000
+		});
+	});
+	</script>
+	<{/if}>
+</div>
+<!-- Content -->
+<div id="xo-content" class="container_12">
+	<{if $xoBlocks.page_topleft}>
+	<!-- Left Blocks -->
+	<div class="grid_3">
+		<{foreach item=block from=$xoBlocks.page_topleft}>
+			<div class="left-block">
+				<h2><{$block.title}></h2>
+				<{$block.content}>
+			</div>
+		<{/foreach}>
+	</div>
+	<{/if}>
+	<!-- Center Blocks -->
+	<{if $xoBlocks.page_topleft and $xoBlocks.page_topright}>
+	<div class="grid_6">
+	<{else}><{if $xoBlocks.page_topleft or $xoBlocks.page_topright}>
+	<div class="grid_9">
+	<{else}>
+	<div class="grid_12">
+	<{/if}><{/if}>
+		<{if $xoBlocks.page_topcenter}>
+			<{foreach item=block from=$xoBlocks.page_topcenter}>
+				<div class="center-top-center">
+					<h2><{$block.title}></h2>
+					<{$block.content}>
+				</div>
+			<{/foreach}>
+		<{/if}>
+		<{if $xoops_contents && ($xoops_contents != '') }>
+			<div class="xo-maincontent">
+				<{$xoops_contents}>
+			</div>
+		<{/if}>
+		<{if $xoBlocks.page_bottomleft or $xoBlocks.page_bottomcenter or $xoBlocks.page_bottomright}>
+			<{foreach item=block from=$xoBlocks.page_bottomleft}>
+				<div class="center-bottom-left">
+					<h2><{$block.title}></h2>
+					<{$block.content}>
+				</div>
+			<{/foreach}>
+			<{foreach item=block from=$xoBlocks.page_bottomright}>
+				<div class="center-bottom-right">
+					<h2><{$block.title}></h2>
+					<{$block.content}>
+				</div>
+			<{/foreach}>
+			<{foreach item=block from=$xoBlocks.page_bottomcenter}>
+				<div class="center-bottom-center">
+					<h2><{$block.title}></h2>
+					<{$block.content}>
+				</div>
+			<{/foreach}>
+		<{/if}>
+	</div>
+	<{if $xoBlocks.page_topright}>
+	<!-- Right Blocks -->
+	<div class="grid_3">
+		<{foreach item=block from=$xoBlocks.page_topright}>
+			<div class="right-block">
+				<h2><{$block.title}></h2>
+				<{$block.content}>
+			</div>
+		<{/foreach}>
+	</div>
+	<{/if}>
+	<div class="clear"></div>
+</div>
+<!-- Footer -->
+<div class="container_12">
+	<!-- You are allowed to remove author's credit, but it will be so nice if you preserve it -->
+	<div class="footer"><{$xoops_footer}> | Inspire 9 - A Design of <a href="http://insarq.com">INSRAQ</a></div>
+</div>
+</body>
+</html>

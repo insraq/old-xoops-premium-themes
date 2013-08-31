@@ -1,0 +1,63 @@
+<{if $xoops_menu_navbar}>
+	<{$xoops_menu_navbar}>
+<{else}>
+	<style>
+	/* Nav */
+	.nav {
+		background: url(<{xoImgUrl img/nav.jpg}>) no-repeat;
+		width: 620px;
+		height: 70px;
+		overflow: hidden;
+		font-size: 16px;
+		font-family: Arial, Helvetica, sans-serif;
+		text-transform: capitalize;
+		font-weight: bold;
+	}
+
+	.nav ul {
+		margin: 12px 0 0 0;
+		padding: 0;
+	}
+	
+	.nav ul li {
+		display: block;
+		float: left;
+		list-style: none;
+		margin: 0 5px;
+	}
+
+	.nav ul li.first {
+		margin: 0 5px 0 15px;
+	}
+
+	.nav ul li a {
+		display: block;
+		padding: 5px 10px;
+	}
+
+	.nav ul li a:hover {
+		background: url(<{xoImgUrl img/nav_bg.jpg}>) repeat-x;
+		color: #fff;
+		-webkit-border-radius: 8px;
+		-moz-border-radius: 8px;
+		border-radius: 8px;
+	}
+	</style>
+	<!--[if lte IE 8]>
+	<style>
+	.nav ul li a:hover {
+		background: none;
+		color: #FF4E21;
+	}
+	</style>
+	<![endif]-->
+	<ul>
+		<li class="first"><a href="<{xoAppUrl}>">Home</a></li>
+		<li><a href="#">About</a></li>
+		<li><a href="#">News</a></li>
+		<li><a href="#">Forum</a></li>
+		<li><a href="#">Blogs</a></li>
+		<li><a href="#">Wiki</a></li>
+		<li><a href="#">Contact</a></li>
+	</ul>
+<{/if}>

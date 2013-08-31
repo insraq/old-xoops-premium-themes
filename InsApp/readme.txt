@@ -1,0 +1,1 @@
+Basically most files you need to modify is in /tpl folder. The file name indicates the part of the design.

@@ -1,0 +1,412 @@
+/* 
+ * Name:			Inspire 9 Main Stylesheet
+ * Author:		insraq
+ * URI:			http://insraq.com/
+ * Version:		9.0
+ * License:		Rf to EULA
+ * Please do not remove the copyright information
+ */ 
+ 
+/* Import */
+
+@import url(reset.css);
+@import url(text.css);
+@import url(960.css);
+@import url(superfish.css);
+
+/* Global Style */
+
+body.xo-page {
+	color: #666;
+	font-size: 13px;
+	font-family: Georgia, Time, "Times New Roman", serif;
+	line-height: 1.6;
+	background: url(img/bg.jpg) repeat;
+}
+
+a {
+	color: #6C8055;
+	text-decoration: none;
+}
+
+a img {
+	outline: none;
+	border: 0;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+h1 {
+	font-size: 35px;
+}
+
+h2 {
+	font-size: 16px;
+}
+
+h3 {
+	font-size: 15px;
+	font-weight: bold;
+}
+
+h1, h2, h3 {
+	font-family: Arial, Verdana, sans-serif;
+	padding: 0;
+	margin: 0;
+}
+
+small {
+	font-size: 12px;
+}
+
+/* Theme Specific Style */
+
+/* Header */
+
+#header {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+#logo {
+	/* margin-top: 10px; Uncomment this if you turn on the banner */
+}
+
+#banner {
+
+}
+
+/* Navbar */
+
+#navbar {
+	text-transform: lowercase;
+	font-family: Arial, Helvetica, Geneva, Verdana, sans-serif;
+	font-size: 18px;
+	margin-bottom: 10px;
+	background: url(img/50.png) repeat;
+	height: 50px;
+	line-height: 50px;
+}
+
+ul.navicon {
+	margin-top: 8px;
+}
+
+ul.navicon li {
+	list-style: none;
+	float: left;
+	margin: 0 20px 0 0;
+	padding: 0;
+	margin-top: 4px;
+	line-height: 1.0;
+}
+
+/* Spotlight */
+
+#spotlight {
+	background: url(img/30.png) repeat;
+	position: relative;
+	margin-bottom: 10px;
+}
+
+.slideshow {
+	height: 300px;
+	overflow: hidden;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.slideshow h2 {
+	font-size: 20px;
+	font-family: Georgia, Time, "Times New Roman", serif;
+	font-weight: normal;
+	margin: 0 0 10px 0;
+	text-shadow: 1px 1px 1px #ccc;
+}
+
+.slideshow div {
+	height: 320px;
+	overflow: hidden;
+}
+
+.slideshow .slide-img {
+	width: 460px;
+	height: 300px;
+	overflow: hidden;
+}
+
+.slidetabs {
+	display: none;
+}
+
+#spotlight .left-arrow {
+	background: url(img/left-arrow.png) no-repeat;
+	width: 25px;
+	height: 51px;
+	position: absolute;
+	text-indent: -9999px;
+	left: -25px;
+	bottom: 0;
+}
+
+#spotlight .right-arrow {
+	background: url(img/right-arrow.png) no-repeat;
+	width: 25px;
+	height: 51px;
+	position: absolute;
+	text-indent: -9999px;
+	left: 960px;
+	bottom: 0;
+}
+
+#spotlight .left-arrow a, #spotlight .right-arrow a {
+	width: 25px;
+	height: 51px;
+	display: block;
+	cursor: pointer;
+}
+
+/* Content */
+
+#xo-content {
+	color: #666;
+}
+
+.xo-maincontent {
+	
+}
+
+/* Footer */
+
+.footer {
+	text-align: right;
+	background: url(img/30.png) repeat;
+	padding: 10px;
+	color: #666;
+	font-size: 12px;
+	margin: 10px 0;
+}
+
+/* Premium Only */
+/* The following defs are for premium theme only */
+
+#searchpanel {
+	display: none;
+	background: url(img/50.png);
+}
+
+#searchpanel form {
+	padding: 10px;
+	float: right;
+}
+
+#searchpanel form a {
+	margin: 0 20px 0 0;
+}
+
+#searchpanel-shut {
+	float: right;
+	background: url(img/shut.png) no-repeat;
+	display: block;
+	width: 12px;
+	height: 12px;
+	text-indent: 9999px;
+	margin: 15px 10px 0 10px;
+}
+
+#userpanel {
+	background: url(img/50.png);
+	display: none;
+}
+
+#userpanel form {
+	padding: 10px;
+	text-align: center;
+}
+
+#userpanel form label {
+	margin: 0 5px 0 20px;
+}
+
+#userpanel form .submit-button {
+	margin: 0 0 0 10px;
+}
+
+#userpanel .panelmenu {
+	padding: 10px;
+	text-align: right;
+}
+
+#userpanel .panelmenu a {
+	margin: 0 10px;
+}
+
+#userpanel-shut {
+	float: right;
+	background: url(img/shut.png) no-repeat;
+	display: block;
+	width: 12px;
+	height: 12px;
+	text-indent: 9999px;
+	margin: 15px 10px 0 10px;
+}
+
+/* System Blocks */
+
+.xoops-msg {
+	background: url(img/50.png) repeat;
+	margin: 100px auto 0 auto;
+	text-align: center;
+	padding: 20px 0;
+}
+
+/* Blocks */
+
+.left-block {
+	margin-bottom: 20px;
+}
+
+.center-top-left {
+	width: 48%;
+	float: left;
+	margin-bottom: 20px;
+}
+
+.center-top-right {
+	width: 48%;
+	float: right;
+	margin-bottom: 20px;
+}
+
+.center-top-center {
+	clear: both;
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+.center-bottom-left {
+	width: 48%;
+	float: left;
+	margin-bottom: 20px;
+}
+
+.center-bottom-right {
+	width: 48%;
+	float: right;
+	margin-bottom: 20px;
+}
+
+.center-bottom-center {
+	clear: both;
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+.right-block {
+	margin-bottom: 20px;
+}
+
+/* XOOPS System Template */
+/* The code here is different from Inspire 1-6. I rewrite it based on blanktheme by Kris */
+/* Main Menu */
+#mainmenu {}
+#mainmenu a {
+	display: block;
+}
+#mainmenu a:hover {}
+#mainmenu a:active, #mainmenu a.current {}
+#mainmenu a:visited {}
+#mainmenu a.menuTop  {}
+#mainmenu a.menuMain {}
+#mainmenu a.menuSub {
+	padding: 0 0 0 10px;
+	font-size: 12px;
+}
+#mainmenu a.menuSub:hover  {}
+#mainmenu a.maincurrent {}
+/* User Menu */
+#usermenu {}
+#usermenu a {
+	display: block;
+}
+#usermenu a:hover  {}
+#usermenu a:active, #usermenu a.current {}
+#usermenu a:visited {}
+#usermenu a.menuTop {}
+#usermenu a.highlight {}
+/* Tables and Cells */
+table {
+	width:100%; 
+	margin: .5em 0 1em 0; 
+	border-collapse: collapse;
+}
+caption {}
+th, th.head, thead {
+	font-weight: bold;
+	text-align: center;
+	vertical-align : middle;
+	background: url(img/50.png) repeat;
+	padding: 5px;
+}
+th.head a {}
+th.head a:hover {}
+.foot, tfoot {}
+tbody {}
+table.outer {
+	border-collapse: separate;
+}
+table td {
+	padding: 5px;
+}
+.outer {	
+	padding: 5px;
+s}
+.head {
+	font-weight: bold;
+	vertical-align: top;
+}
+.even {
+	padding: 5px;
+}
+.odd {
+	padding: 5px;
+}
+tr.even {
+
+}
+tr.odd {
+
+}
+/* Forms */
+button, input[type=submit], input[type=button], input[type=reset], .xo-formbuttons, .formButton {
+}
+/* Pages Navigation */
+#xo-pagenav {}
+.pagneutral {}
+.pagact {}
+.paginact {}
+.xo-counterpage {
+	padding: 5px;
+	margin: 0 2px;
+	border: 1px solid #ccc;
+}
+.xo-pagarrow {
+	padding: 5px;
+	margin: 0 2px;
+	border: 1px solid #ccc;
+}
+
+/* Codes and Quotes */
+
+.xoopsCode {
+	max-height: 400px;
+	overflow: auto;
+	font-family: Consolas, "Courier New", monospace;
+}
+.xoopsQuote {}
+blockquote {
+	font-style: italic;
+	font-family: Georgia, "Times New Roman", serif;
+}

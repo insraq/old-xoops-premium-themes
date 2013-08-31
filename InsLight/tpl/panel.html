@@ -1,0 +1,66 @@
+<div id="panel" class="container_12">
+	<div class="panel">
+		<div class="grid_4">
+			<{if !$xoops_isuser}>
+			<div class="xo-loginbox">
+				<h2>Sign In</h2>
+				<form method="post" action="<{xoAppUrl user.php op=login}>">
+					<label>
+						<span>Username</span>
+						<input class="text" name="uname" type="text" size="15" />
+					</label>
+					<label>
+						<span>Password</span>
+						<input class="text" name="pass" type="password" size="15" />
+					</label>
+					<input type="hidden" name="xoops_redirect" value="<{$smarty.server.REQUEST_URI}>" />
+					<span class="remember"><input type="checkbox" name="rememberme" value="On" /> Remember </span>
+					<input type="hidden" name="xoops_login" value="1" />
+					<input class="submit" type="submit" value="Submit" />
+				</form>
+			</div>
+			<{else}>
+			<div class="xo-usermenu">
+				<h2>User Menu</h2>
+				<{xoInboxCount assign=pmcount}>
+				<a href="<{xoAppUrl viewpmsg.php}>" title="Inbox">Inbox<{if $pmcount}><b>(New!)</b><{/if}></a>
+				<a href="<{xoAppUrl /notifications.php}>" title="Notifications">Notifications</a>
+				<a href="<{xoAppUrl /user.php}>" title="Profile">Profile</a>
+				<a href="<{xoAppUrl /edituser.php}>" title="Edit Profile">Edit Profile</a>
+				<{if $xoops_isadmin}><a href="<{xoAppUrl /admin.php}>" title="Admin">Admin</a><{/if}>
+				<a href="<{xoAppUrl /user.php op=logout}>" title="Log out" >Logout</a>
+			</div>
+			<{/if}>
+		</div>
+		<div class="grid_4">
+			<div class="search-form">
+				<h2>Search</h2>
+				<form action="<{xoAppUrl search.php}>" method="get">
+					<input class="search-input" type="text" name="query" />
+					<input class="search-submit" type="submit" value="Search" />
+					<input type="hidden" name="action" value="results" />
+					<a href="<{xoAppUrl /search.php}>">Advanced Search</a>
+				</form>
+				<div class="misc">
+					<h2>Social Networks</h2>
+					<!-- Twitter -->
+					<a href="#"><img src="<{xoImgUrl img/twitter.png}>" /></a>
+					<!-- Facebook -->
+					<a href="#"><img src="<{xoImgUrl img/facebook.png}>" /></a>
+					<!-- Flickr -->
+					<a href="#"><img src="<{xoImgUrl img/flickr.png}>" /></a>
+					<!-- Last.fm -->
+					<a href="#"><img src="<{xoImgUrl img/lastfm.png}>" /></a>
+					<!-- LinkedIn -->
+					<a href="#"><img src="<{xoImgUrl img/linkedin.png}>" /></a>
+					<span class="clear"></span>
+				</div>
+			</div>
+		</div>
+		<div class="grid_4">
+			<h2>Welcome to <{$xoops_sitename}></h2>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget tellus purus. Vivamus iaculis imperdiet ligula. Quisque ac orci elit, nec pulvinar leo. Nulla velit ante, ullamcorper id scelerisque nec, laoreet eu sem. Cras non volutpat quam. Nam dui mi, consectetur et sollicitudin accumsan, cursus fermentum justo. 
+		</div>
+		<div class="clear"></div>
+	</div>
+</div>

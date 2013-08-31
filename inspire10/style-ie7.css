@@ -1,0 +1,14 @@
+/* 
+ * Name:			Inspire 10 IE7 Fix Stylesheet
+ * Author:		insraq
+ * URI:			http://insraq.com/
+ * Version:		10.0
+ * License:		CC-BY 3.0
+ * Please do not remove the copyright information
+ */ 
+
+/* Fix the black border bug */
+input {
+	filter:chroma(color=#000000);
+	border:none;
+}

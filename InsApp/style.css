@@ -1,0 +1,583 @@
+/* 
+ * Name:			InsApp
+ * Author:		insraq
+ * URI:			http://insraq.com/
+ * Version:		1.0 Premium
+ * License:		Creative Commons 3.0
+ * Please do not remove the copyright information
+ */ 
+
+/* Import */
+
+@import url(reset.css);
+@import url(text.css);
+@import url(960.css);
+ 
+/* Global Style */
+
+body.xo-page {
+	color: #666;
+	font-size: 13px;
+	font-family: Georgia, Time, "Times New Roman", serif;
+	line-height: 1.6;
+}
+
+a {
+	color: #21D6BD;
+	text-decoration: none;
+}
+
+a img {
+	outline: none;
+	border: 0;
+}
+
+a:hover {
+	color: #FF4E21;
+	text-decoration: none;
+}
+
+h1, h2, h3 {
+	font-family: Arial, Verdana, sans-serif;
+	margin: 5px 0;
+	font-weight: normal;
+}
+
+h1 {
+	font-size: 35px;
+}
+
+h2 {
+	font-size: 20px;
+}
+
+h3 {
+	font-size: 18px;
+	font-weight: bold;
+}
+
+small {
+	font-size: 12px;
+}
+
+/* Theme Specific Style */
+
+/* Header */
+
+#header {
+	position: relative;
+	height: 400px;
+}
+
+.header {
+	background: url(img/header_bg.jpg) repeat-x;
+	height: 400px;
+	width: 100%;
+	position: relative;
+}
+
+h1.logo {
+	background: url(img/logo.png);
+	width: 114px;
+	height: 45px;
+	text-indent: -9999px;
+	overflow: hidden;
+	margin: 10px 0 0 0
+}
+
+h1.logo a {
+	width: 114px;
+	height: 45px;
+	display: block
+}
+
+/* Featured */
+
+.slogan-1, .slogan-2 {
+
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-weight: normal;
+	font-style: italic;
+	line-height: 1.0;
+}
+
+.slogan-1 {
+	color: #e1f7f6;
+	font-size: 50px;
+	margin: 40px 0 0 0;
+}
+
+.slogan-2 {
+	color: #a1e8e2;
+	font-size: 40px;
+	margin: 20px 0 0 0;
+}
+
+.a_btn {
+	display: block;
+	width: 145px;
+	height: 50px;
+	background: url(img/hd_btn.png) no-repeat;
+	float: left;
+	margin: 30px 40px 0 0;
+	line-height: 45px;
+	text-align: center;
+	color: #fff;
+	font-style: italic;
+	font-size: 18px;
+}
+
+.a_btn:hover {
+	color: #fff;
+	text-decoration: underline;
+}
+
+/* Slideshow */
+
+#slideshow {
+	position: relative;
+}
+
+.slideshow {
+	width: 360px;
+	height: 360px;
+	position: absolute;
+	top: 20px;
+	left: 90px;
+}
+
+#btn_prev, #btn_next {
+	width: 22px;
+	height: 22px;
+	position: absolute;
+	top: 180px;
+	text-indent: -9999px;
+	overflow: hidden;
+}
+
+#btn_prev {
+	background: url(img/prev.png);
+	left: 40px;
+}
+
+#btn_next {
+	background: url(img/next.png);
+	right: -40px;
+}
+
+/* Tabs */
+
+ul.tabs {
+	position: absolute;
+	bottom: 0;
+	margin: 0;
+	font-size: 18px;
+}
+
+ul.tabs a {
+	color: #fff;
+}
+
+ul.tabs li {
+	list-style: none;
+	float: left;
+	height: 50px;
+	line-height: 50px;
+	display: block;
+	margin: 0 10px 0 0;
+}
+
+ul.tabs li a {
+	height: 50px;
+	display: block;
+	padding: 0 15px;
+	-webkit-border-top-left-radius: 5px;
+	-webkit-border-top-right-radius: 5px;
+	-webkit-border-bottom-right-radius: 0px;
+	-webkit-border-bottom-left-radius: 0px;
+	-moz-border-radius-topleft: 5px;
+	-moz-border-radius-topright: 5px;
+	-moz-border-radius-bottomright: 0px;
+	-moz-border-radius-bottomleft: 0px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 0px;
+	border-bottom-left-radius: 0px; 
+}
+
+ul.tabs li a:hover, ul.tabs li a.current {
+	background: url(img/tab_bg.jpg) repeat-x;
+	color: #21D6BD;
+}
+
+.panes {
+	margin: 10px 0 0 0;
+}
+
+/* Panel */
+
+#panel {
+	margin-bottom: 5px;
+	position: relative;
+	display: none;
+}
+
+.panel {
+	background: #E80C7A;
+	color: #fff;
+	padding: 15px 0 20px 0;
+}
+
+.panel a {
+	color: #fff;
+}
+
+.panel a:hover {
+	color: #fff;
+}
+
+.xo-usermenu h2 {
+	margin: 5px 0 5px 20px;
+}
+
+.xo-usermenu a {
+	display: block;
+	width: 125px;
+	float: left;
+	padding: 5px 0 5px 20px;
+}
+
+.xo-usermenu a:hover {
+	background: #fff;
+	color: #E80C7A;
+}
+
+.xo-loginbox {
+	margin-left: 20px;
+}
+
+.xo-loginbox label {
+	width: 300px;
+	display: block;
+	float: left;
+	margin: 5px 0;
+}
+
+.xo-loginbox span {
+	width: 80px;
+	display: block;
+	float: left;
+	margin: 5px 0 0 0;
+}
+
+.xo-loginbox .text {
+	width: 150px;
+	border: 1px solid #ccc;
+	padding: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.xo-loginbox .submit {
+	margin: 0 0 0 142px;
+	display: block;
+	width: 100px;
+	height: 30px;
+	background: url(img/button-bg.png) repeat-x bottom;
+	border: 1px solid #ccc;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	color: #666;
+	clear: both;
+}
+
+.xo-loginbox .remember {
+	margin: 10px 0;
+	display: block;
+	width: 240px;
+	text-align: right;
+}
+
+.search-input {
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	padding: 5px;
+	width: 150px;
+}
+
+.search-submit {
+	width: 100px;
+	height: 30px;
+	background: url(img/button-bg.png) repeat-x bottom;
+	border: 1px solid #ccc;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	color: #666;
+}
+
+.search-form a {
+	margin: 5px 0;
+	display: block;
+}
+
+.search-form .misc {
+	margin: 20px 0 0 0;
+}
+
+.search-form .misc img {
+	float: left;
+}
+
+.misc img {
+	margin: 10px 8px 0 0;
+}
+
+.panel-up {
+	width: 22px;
+	height: 22px;
+	border: 10px solid #E80C7A;
+	position: absolute;
+	top: -47px;
+	right: -42px;
+	background: url(img/up.png) no-repeat;
+	text-indent: -9999px;
+	overflow: hidden;
+	display: none;
+	-webkit-border-top-left-radius: 0px;
+	-webkit-border-top-right-radius: 8px;
+	-webkit-border-bottom-right-radius: 8px;
+	-webkit-border-bottom-left-radius: 0px;
+	-moz-border-radius-topleft: 0px;
+	-moz-border-radius-topright: 8px;
+	-moz-border-radius-bottomright: 8px;
+	-moz-border-radius-bottomleft: 0px;
+	border-top-left-radius: 0px;
+	border-top-right-radius: 8px;
+	border-bottom-right-radius: 8px;
+	border-bottom-left-radius: 0px; 
+}
+
+.panel-up a {
+	display: block;
+	width: 22px;
+	height: 22px;
+}
+
+.panel-down {
+	width: 22px;
+	height: 22px;
+	margin: 10px;
+	position: absolute;
+	top: 0;
+	right: -42px;
+	background: url(img/down.png) no-repeat;
+	text-indent: -9999px;
+	overflow: hidden;
+}
+
+.panel-down a {
+	display: block;
+	width: 22px;
+	height: 22px;
+}
+
+/* Blocks */
+
+.left-block {
+	margin-bottom: 20px;
+}
+
+.center-top-left {
+	width: 48%;
+	float: left;
+	margin-bottom: 20px;
+}
+
+.center-top-right {
+	width: 48%;
+	float: right;
+	margin-bottom: 20px;
+}
+
+.center-top-center {
+	clear: both;
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+.center-bottom-left {
+	width: 48%;
+	float: left;
+	margin-bottom: 20px;
+}
+
+.center-bottom-right {
+	width: 48%;
+	float: right;
+	margin-bottom: 20px;
+}
+
+.center-bottom-center {
+	clear: both;
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+.sidebar {
+	margin-top: 70px;
+	border-left: 1px solid #e9e9e9;
+	border-right: 1px solid #e9e9e9;
+	border-bottom: 1px solid #e9e9e9;
+}
+
+.right-block-content {
+	padding: 5px 10px;
+}
+
+.right-block h2 {
+	border-bottom: 1px solid #e9e9e9;
+	border-top: 1px solid #e9e9e9;
+	padding: 10px;
+	background: #f8f8f8;
+	background: url(img/sidebar_h2.jpg) repeat-x bottom;
+	margin: 0;
+	position: relative;
+}
+
+.right-block-toggle {
+	width: 16px;
+	height: 16px;
+	background-image: url(img/toggle.png);
+	position: absolute;
+	top: 12px;
+	right: 10px;
+	background-repeat: no-repeat;
+	background-position: top right;
+}
+
+.plus {
+	background-position: top left;
+}
+
+.xo-cotent {
+}
+
+.footer {
+	text-align: right;
+	border-top: 1px solid #e9e9e9;
+	border-left: 1px solid #e9e9e9;
+	border-right: 1px solid #e9e9e9;
+	padding: 10px;
+	font-size: 12px;
+	color: #999;
+}
+
+/* XOOPS System Template */
+/* The code here is different from Inspire 1-6. I rewrite it based on blanktheme by Kris */
+/* Main Menu */
+#mainmenu {}
+#mainmenu a {
+	display: block;
+}
+#mainmenu a:hover {}
+#mainmenu a:active, #mainmenu a.current {}
+#mainmenu a:visited {}
+#mainmenu a.menuTop  {}
+#mainmenu a.menuMain {}
+#mainmenu a.menuSub {
+	padding: 0 0 0 10px;
+	font-size: 12px;
+}
+#mainmenu a.menuSub:hover  {}
+#mainmenu a.maincurrent {}
+/* User Menu */
+#usermenu {}
+#usermenu a {
+	display: block;
+}
+#usermenu a:hover  {}
+#usermenu a:active, #usermenu a.current {}
+#usermenu a:visited {}
+#usermenu a.menuTop {}
+#usermenu a.highlight {}
+/* Tables and Cells */
+table {
+	width:100%; 
+	margin: .5em 0 1em 0; 
+	border-collapse: collapse;
+}
+caption {}
+th, th.head, thead {
+	font-weight: bold;
+	text-align: center;
+	vertical-align : middle;
+	background: #F0F0F0;
+	padding: 5px;
+}
+th.head a {}
+th.head a:hover {}
+.foot, tfoot {}
+tbody {}
+table.outer {
+	border-collapse: separate;
+}
+table td {
+	padding: 5px;
+}
+.outer {	
+	padding: 5px;
+s}
+.head {
+	font-weight: bold;
+	vertical-align: top;
+}
+.even {
+	padding: 5px;
+}
+.odd {
+	padding: 5px;
+}
+tr.even {
+
+}
+tr.odd {
+
+}
+/* Forms */
+button, input[type=submit], input[type=button], input[type=reset], .xo-formbuttons, .formButton {
+}
+input[type=text], input[type=password], input[type=checkbox], input[type=file], textarea {
+}
+/* Pages Navigation */
+#xo-pagenav {}
+.pagneutral {}
+.pagact {}
+.paginact {}
+.xo-counterpage {
+	padding: 5px;
+	margin: 0 2px;
+	border: 1px solid #ccc;
+}
+.xo-pagarrow {
+	padding: 5px;
+	margin: 0 2px;
+	border: 1px solid #ccc;
+}
+
+/* Codes and Quotes */
+
+.xoopsCode {
+	max-height: 400px;
+	overflow: auto;
+	font-family: Consolas, "Courier New", monospace;
+}
+.xoopsQuote {}
+blockquote {
+	font-style: italic;
+	font-family: Georgia, "Times New Roman", serif;
+}

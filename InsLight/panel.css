@@ -1,0 +1,127 @@
+/* Panel */
+
+#panel {
+	margin-bottom: 5px;
+	position: relative;
+	display: block;
+	display: none;
+}
+
+.panel {
+	background: #BCD400;
+	color: #fff;
+	padding: 15px 0 20px 0;
+}
+
+.panel h2 {
+	color: #fff;
+}
+
+.panel a {
+	color: #fff;
+}
+
+.panel a:hover {
+	color: #fff;
+}
+
+.xo-usermenu h2 {
+	margin: 5px 0 5px 20px;
+}
+
+.xo-usermenu a {
+	display: block;
+	width: 125px;
+	float: left;
+	padding: 5px 0 5px 20px;
+}
+
+.xo-usermenu a:hover {
+	background: #fff;
+	color: #BCD400;
+}
+
+.xo-loginbox {
+	margin-left: 20px;
+}
+
+.xo-loginbox label {
+	width: 300px;
+	display: block;
+	float: left;
+	margin: 5px 0;
+}
+
+.xo-loginbox span {
+	width: 80px;
+	display: block;
+	float: left;
+	margin: 5px 0 0 0;
+}
+
+.xo-loginbox .text {
+	width: 150px;
+	border: 1px solid #ccc;
+	padding: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.xo-loginbox .submit {
+	margin: 0 0 0 142px;
+	display: block;
+	width: 100px;
+	height: 30px;
+	background: url(img/button-bg.png) repeat-x bottom;
+	border: 1px solid #ccc;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	color: #666;
+	clear: both;
+}
+
+.xo-loginbox .remember {
+	margin: 10px 0;
+	display: block;
+	width: 240px;
+	text-align: right;
+}
+
+.search-input {
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	padding: 5px;
+	width: 150px;
+}
+
+.search-submit {
+	width: 100px;
+	height: 30px;
+	background: url(img/button-bg.png) repeat-x bottom;
+	border: 1px solid #ccc;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	color: #666;
+}
+
+.search-form a {
+	margin: 5px 0;
+	display: block;
+}
+
+.search-form .misc {
+	margin: 20px 0 0 0;
+}
+
+.search-form .misc img {
+	float: left;
+}
+
+.misc img {
+	margin: 10px 8px 0 0;
+}

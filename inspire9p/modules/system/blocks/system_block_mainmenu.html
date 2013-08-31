@@ -1,0 +1,14 @@
+<li>
+	<a href="<{xoAppUrl}>"><{$block.lang_home}></a>
+</li>
+
+<{foreach item=module from=$block.modules}>
+<li>
+	<a class="menuMain <{if $module.highlight}>maincurrent<{/if}>" href="<{$xoops_url}>/modules/<{$module.directory}>/" title="<{$module.name}>"><{$module.name}></a>
+	<{if $module.sublinks}>
+	<ul>
+		<{foreach item=sublink from=$module.sublinks}><li><a class="menuSub" href="<{$sublink.url}>" title="<{$sublink.name}>"><{$sublink.name}></a></li><{/foreach}>
+	</ul>
+	<{/if}>
+</li>
+<{/foreach}>
